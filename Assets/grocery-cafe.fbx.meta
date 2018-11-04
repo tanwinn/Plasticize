@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: a3054b7d995ee8249af56163509549aa
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: cafe_sign
+    100002: camera
+    100004: Cube
+    100006: Cube_2
+    100008: Cube_3
+    100010: Cube_4
+    100012: Cube_5
+    100014: Floor
+    100016: floor
+    100018: floor_1
+    100020: frame6
+    100022: frame_0
+    100024: frame_1
+    100026: frame_2
+    100028: frame_3
+    100030: frame_4
+    100032: frame_5
+    100034: frame_5_2
+    100036: frames
+    100038: //RootNode
+    100040: left_wall
+    100042: LIGHT1
+    100044: LIGHT1_2
+    100046: LIGHT_2
+    100048: LIGHT_2_2
+    100050: LIGHT_3
+    100052: LIGHT_3_2
+    100054: LIGHT_4
+    100056: light_4
+    100058: LIGHTS
+    100060: Main_camera
+    100062: mid_wall
+    100064: Null
+    100066: PCam_Image001
+    100068: right_wall
+    400000: cafe_sign
+    400002: camera
+    400004: Cube
+    400006: Cube_2
+    400008: Cube_3
+    400010: Cube_4
+    400012: Cube_5
+    400014: Floor
+    400016: floor
+    400018: floor_1
+    400020: frame6
+    400022: frame_0
+    400024: frame_1
+    400026: frame_2
+    400028: frame_3
+    400030: frame_4
+    400032: frame_5
+    400034: frame_5_2
+    400036: frames
+    400038: //RootNode
+    400040: left_wall
+    400042: LIGHT1
+    400044: LIGHT1_2
+    400046: LIGHT_2
+    400048: LIGHT_2_2
+    400050: LIGHT_3
+    400052: LIGHT_3_2
+    400054: LIGHT_4
+    400056: light_4
+    400058: LIGHTS
+    400060: Main_camera
+    400062: mid_wall
+    400064: Null
+    400066: PCam_Image001
+    400068: right_wall
+    2000000: Main_camera
+    2000002: PCam_Image001
+    2100000: PMat GROCERY-MAPPING-2.3
+    2100002: Mat.1
+    2100004: PMat GROCERY-MAPPING-2.2
+    2100006: PMat GROCERY-MAPPING-2.6
+    2100008: PMat GROCERY-MAPPING-2.5
+    2100010: PMat GROCERY-MAPPING-2.7
+    2100012: PMat GROCERY-MAPPING-2.4
+    2100014: PMat GROCERY-MAPPING-2.8
+    2100016: PMat GROCERY-MAPPING-2.14
+    2100018: PMat GROCERY-MAPPING-2.13
+    2100020: PMat GROCERY-MAPPING-2.12
+    2100022: PMat GROCERY-MAPPING-2.10
+    2100024: PMat GROCERY-MAPPING-2.9
+    2100026: PMat GROCERY-MAPPING-2.11
+    2100028: PMat GROCERY-MAPPING-2
+    2300000: Cube
+    2300002: Cube_2
+    2300004: Cube_3
+    2300006: Cube_4
+    2300008: Cube_5
+    2300010: floor
+    2300012: frame6
+    2300014: frame_5_2
+    2300016: left_wall
+    2300018: LIGHT1_2
+    2300020: LIGHT_2_2
+    2300022: LIGHT_3_2
+    2300024: LIGHT_4
+    2300026: mid_wall
+    2300028: right_wall
+    3300000: Cube
+    3300002: Cube_2
+    3300004: Cube_3
+    3300006: Cube_4
+    3300008: Cube_5
+    3300010: floor
+    3300012: frame6
+    3300014: frame_5_2
+    3300016: left_wall
+    3300018: LIGHT1_2
+    3300020: LIGHT_2_2
+    3300022: LIGHT_3_2
+    3300024: LIGHT_4
+    3300026: mid_wall
+    3300028: right_wall
+    4300000: right_wall
+    4300002: floor
+    4300004: left_wall
+    4300006: LIGHT_4
+    4300008: LIGHT_3_2
+    4300010: LIGHT_2_2
+    4300012: LIGHT1_2
+    4300014: Cube
+    4300016: frame6
+    4300018: frame_5_2
+    4300020: Cube_2
+    4300022: Cube_3
+    4300024: Cube_4
+    4300026: Cube_5
+    4300028: mid_wall
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

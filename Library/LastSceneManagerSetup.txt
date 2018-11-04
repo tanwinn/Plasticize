@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/m/Scene/grocery smaller.unity
+  isLoaded: 1
+  isActive: 1
