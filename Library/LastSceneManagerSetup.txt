@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/testSketchUp.unity
+- path: Assets/Scenes/grocery smaller.unity
   isLoaded: 1
   isActive: 1
