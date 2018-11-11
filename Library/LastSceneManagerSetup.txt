@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/CAFE-Limbo.unity
+- path: Assets/Scenes/CAFE-Green.unity
   isLoaded: 1
   isActive: 1
