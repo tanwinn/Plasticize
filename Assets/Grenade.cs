@@ -16,6 +16,7 @@ public class Grenade : MonoBehaviour {
 
     public void printInfo() {
         Debug.Log(this);
+        print("Deactivated");
     }
 
     public void DestroyImmediately() {
