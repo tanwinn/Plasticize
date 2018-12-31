@@ -59,9 +59,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FPSController.cs" />
-    <Compile Include="Assets\FPSControllerTest.cs" />
-    <Compile Include="Assets\Grenade.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -350,6 +347,8 @@
     <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\Mine\Script\Attractor.cs" />
+    <Compile Include="Assets\Mine\Script\FPSController.cs" />
+    <Compile Include="Assets\Mine\Script\Grenade.cs" />
     <Compile Include="Assets\Projection-mapping-example\Scripts\RandomLightIntensity.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestThrow.cs" />
