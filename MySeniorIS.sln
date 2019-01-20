@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mySeniorIS", "Assembly-CSharp.csproj", "{85C8FC44-95A2-0CF9-EF16-426F727DBE72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mySeniorIS", "Assembly-CSharp-firstpass.csproj", "{D51DD3A1-D2E9-B1A7-F7A0-EACC15B89A0F}"
