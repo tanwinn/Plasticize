@@ -3,9 +3,11 @@ using System.Collections;
 using UnityEditor;
 using System.Collections.Generic;
 
-public class MakeScriptableObject {
-    [MenuItem("Assets/Create/My Scriptable Cube Object")]
+
+public class CreateScriptableObjects : MonoBehaviour {
+    //[MenuItem("Assets/Create/My Scriptable Cube Object")]
     public static void CreateAsset() {
+        // Script to create scriptable cubes, sppheres, and cyllinders with random materials
         string PATH_TO_ASSET = "Assets/Mine/";
         string PATH_TO_ASSET_INTERACTIVE = PATH_TO_ASSET + "Prefab-Interactive/";
         
@@ -25,8 +27,8 @@ public class MakeScriptableObject {
             AssetDatabase.CreateAsset(asset, PATH_TO_ASSET_INTERACTIVE + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
 
-            EditorUtility.FocusProjectWindow();
-            Selection.activeObject = asset;
+            //EditorUtility.FocusProjectWindow();
+            //Selection.activeObject = asset;
         }
 
         for (int i = 0; i < cubeSizeList.Count; i++) {
@@ -42,8 +44,8 @@ public class MakeScriptableObject {
             AssetDatabase.CreateAsset(asset, PATH_TO_ASSET_INTERACTIVE + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
 
-            EditorUtility.FocusProjectWindow();
-            Selection.activeObject = asset;
+            //EditorUtility.FocusProjectWindow();
+            //Selection.activeObject = asset;
         }
 
         for (int i = 0; i < cubeSizeList.Count; i++) {
@@ -60,8 +62,8 @@ public class MakeScriptableObject {
             AssetDatabase.CreateAsset(asset, PATH_TO_ASSET_INTERACTIVE + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
 
-            EditorUtility.FocusProjectWindow();
-            Selection.activeObject = asset;
+            //EditorUtility.FocusProjectWindow();
+            //Selection.activeObject = asset;
         }
     }
 
