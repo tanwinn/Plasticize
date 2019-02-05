@@ -5,66 +5,75 @@ using System.Collections.Generic;
 
 
 public class CreateScriptableObjects : MonoBehaviour {
-    //[MenuItem("Assets/Create/My Scriptable Cube Object")]
-    public static void CreateAsset() {
-        // Script to create scriptable cubes, sppheres, and cyllinders with random materials
-        string PATH_TO_ASSET = "Assets/Mine/";
-        string PATH_TO_ASSET_INTERACTIVE = PATH_TO_ASSET + "Prefab-Interactive/";
-        
-        List<float> cubeSizeList = new List<float>() { .15f, .25f, .2f };
+    // Script to create scriptable cubes, sppheres, and cyllinders with random materials
+    static string PATH_TO_ASSET = "Assets/Mine/";
+    static string PATH_TO_ASSET_INTERACTIVE = PATH_TO_ASSET + "Prefab-Interactive/";
+    static string PATH_TO_ASSET_NONINTERACTIVE = PATH_TO_ASSET + "Prefab-NonInteractive/";
 
-        
-        for (int i = 0; i < cubeSizeList.Count; i++) {
-            Cube asset = ScriptableObject.CreateInstance<Cube>();
-            asset.size = cubeSizeList[i];
-            string newAssetName = "Cube " + asset.size;
-            asset.isInteractive = true;
 
-            // Randomize Material 
-            
-            asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
-        
-            AssetDatabase.CreateAsset(asset, PATH_TO_ASSET_INTERACTIVE + newAssetName + ".asset");
-            AssetDatabase.SaveAssets();
-
-            //EditorUtility.FocusProjectWindow();
-            //Selection.activeObject = asset;
-        }
-
-        for (int i = 0; i < cubeSizeList.Count; i++) {
+    static void createSphereAsset(List<float> sizeList, bool isInteractive) {
+        for (int i = 0; i < sizeList.Count; i++) {
             Sphere asset = ScriptableObject.CreateInstance<Sphere>();
-            asset.size = cubeSizeList[i];
+            asset.size = sizeList[i];
             string newAssetName = "Sphere " + asset.size;
-            asset.isInteractive = true;
+            asset.isInteractive = isInteractive;
+            // Randomize Material 
+            asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
+
+            // Save Asset
+            string savePath = PATH_TO_ASSET_INTERACTIVE;
+            if (!isInteractive)
+                savePath = PATH_TO_ASSET_NONINTERACTIVE;
+            AssetDatabase.CreateAsset(asset, savePath + newAssetName + ".asset");
+            AssetDatabase.SaveAssets();
+        }
+    }
+
+    static void createCubeAsset(List<float> sizeList, bool isInteractive) {
+        for (int i = 0; i < sizeList.Count; i++) {
+            Cube asset = ScriptableObject.CreateInstance<Cube>();
+            asset.size = sizeList[i];
+            string newAssetName = "Cube " + asset.size;
+            asset.isInteractive = isInteractive;
 
             // Randomize Material 
 
             asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
 
-            AssetDatabase.CreateAsset(asset, PATH_TO_ASSET_INTERACTIVE + newAssetName + ".asset");
+            // Save Asset
+            string savePath = PATH_TO_ASSET_INTERACTIVE;
+            if (!isInteractive)
+                savePath = PATH_TO_ASSET_NONINTERACTIVE;
+            AssetDatabase.CreateAsset(asset, savePath + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
 
-            //EditorUtility.FocusProjectWindow();
-            //Selection.activeObject = asset;
         }
+    }
 
-        for (int i = 0; i < cubeSizeList.Count; i++) {
+    static void createCylinderAsset(List<float> sizeList, bool isInteractive) {
+        for (int i = 0; i < sizeList.Count; i++) {
             Cylinder asset = ScriptableObject.CreateInstance<Cylinder>();
-            asset.width = cubeSizeList[i];
+            asset.width = sizeList[i];
             asset.height = asset.width * 2;
             string newAssetName = "Cylinder " + asset.width;
-            asset.isInteractive = true;
-
+            asset.isInteractive = isInteractive;
             // Randomize Material 
-
             asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
 
-            AssetDatabase.CreateAsset(asset, PATH_TO_ASSET_INTERACTIVE + newAssetName + ".asset");
+            // Save Asset
+            string savePath = PATH_TO_ASSET_INTERACTIVE;
+            if (!isInteractive)
+                savePath = PATH_TO_ASSET_NONINTERACTIVE;
+            AssetDatabase.CreateAsset(asset, savePath + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
 
-            //EditorUtility.FocusProjectWindow();
-            //Selection.activeObject = asset;
         }
+    }
+    public static void CreateAsset(List<float> sizeList, bool isInteractive = true) {
+        if (sizeList.Count == 0) Debug.Log("ERROR:: CreateScriptableObjects.CreateAsset: missing sizeList!");
+        createCubeAsset(sizeList, isInteractive);
+        createCylinderAsset(sizeList, isInteractive);
+        createSphereAsset(sizeList, isInteractive);
     }
 
    

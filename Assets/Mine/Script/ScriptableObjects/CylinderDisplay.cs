@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class CylinderDisplay : MonoBehaviour {
     public Cylinder cylinder;
-    // Keeps track of the change for ome-time update
-    private bool ObjectisModified = false;
 
     // Use this for initialization
     void Start () {
         GetComponent<Renderer>().material = cylinder.material;
         name = cylinder.name;
         transform.localScale = new Vector3(cylinder.width, cylinder.height, cylinder.width);
-        transform.localPosition = cylinder.position;
         if (cylinder.isInteractive)
             gameObject.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();
+        else
+            gameObject.AddComponent<Rigidbody>();
     }
-
-    public void setPosition(Vector3 input) {
-        cylinder.position = input;
-        ObjectisModified = true;
-    }
-
+    
+    // Keeps track of the change for ome-time update
+    private bool ObjectIsModified = false;
     public void setIsInteractive(bool input) {
         cylinder.isInteractive = input;
-        ObjectisModified = true;
+        ObjectIsModified = true;
     }
 
+    
     void Update() {
-        if (ObjectisModified) {
-            transform.localPosition = cylinder.position;
-            if (cylinder.isInteractive)
+        if (ObjectIsModified) {
+            if (cylinder.isInteractive) {
                 gameObject.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();
-            else if (gameObject.GetComponent<Leap.Unity.Interaction.InteractionBehaviour>())
+            }
+            else if (gameObject.GetComponent<Leap.Unity.Interaction.InteractionBehaviour>()) {
+                //Debug.Log("Destroy Interaction Behaviour");
                 Destroy(gameObject.GetComponent<Leap.Unity.Interaction.InteractionBehaviour>());
-            ObjectisModified = false;
+                gameObject.AddComponent<Rigidbody>();
+            }
+            ObjectIsModified = false;
         }
     }
 
