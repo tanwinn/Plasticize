@@ -5,39 +5,35 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using SeniorIS;
 
 public class GenerateObjects : MonoBehaviour {
     public GameObject ground;
     public GameObject groundActiveZone;
 
     static private bool DEBUG_MODE = false;
-    static string PATH_TO_ASSET = "Assets/Mine/";
-    static string PATH_TO_ASSET_INTERACTIVE = PATH_TO_ASSET + "Prefab-Interactive/";
-    static string PATH_TO_ASSET_NONINTERACTIVE = PATH_TO_ASSET + "Prefab-NonInteractive/";
-    static int INTERACTIVE_COUNT = 10;
-    static int NONINTERACTIVE_COUNT = 80;
-    static List <float> sizeList = new List<float>() { .05f, .11f, .07f };
 
     Vector3 RandomizeVector3(Vector3 min, Vector3 max) {
-        float rand_x = Random.Range(min.x, max.x-.06f);
-        float rand_y = Random.Range(min.y, max.y-.02f);
-        float rand_z = Random.Range(min.z, max.z-.07f);
+        float rand_x = Random.Range(min.x, max.x-.26f);
+        float rand_y = Random.Range(min.y, max.y-.22f);
+        float rand_z = Random.Range(min.z, max.z-.27f);
         return new Vector3(rand_x, rand_y, rand_z);
     }
     
     bool isBetween(float point, float point1, float point2) {
-        // given two point without knowing which one is greater, see if point given is in between 
+    // given two point without knowing which one is greater, see if point given is in between 
         bool result = (Math.Abs(point1 - point2) >= Math.Abs(point - point1) && Math.Abs(point1 - point2) >= Math.Abs(point - point2));
         if (DEBUG_MODE)
             Debug.Log("isBetween(point=" + point + ", point1=" + point1 + ", point2=" + point2 + ") returns " + result);
         
         return result; 
     }
-
-    // test this first - POTENTIAL INFINITE LOOP
+    
     Vector3 RandomizeVector3Except(Vector3 smallRangeMin, Vector3 smallRangeMax, Vector3 bigRangeMin, Vector3 bigRangeMax) {
-        // bigRange must wrap around than smallRange
-        //Vector3 centerPosition = (bigRangeMax - bigRangeMin) * .5f;
+    // input two areas: small and big areas defined by their min max bounds
+    // output a random vector3 that falls in the bigger area but not the smaller area
+    // bigRange must wrap around than smallRange
+
         Vector3 randVector = RandomizeVector3(bigRangeMin, bigRangeMax);
         if (DEBUG_MODE)
             Debug.Log("RandomizeExcept: returns randVector " + randVector);
@@ -45,8 +41,7 @@ public class GenerateObjects : MonoBehaviour {
             while (isBetween(randVector.z, smallRangeMin.z, smallRangeMax.z))
                 randVector.z = Random.Range(bigRangeMin.z, bigRangeMax.z);
         }
-        return randVector;
-        
+        return randVector;    
     } 
 
     Vector3 getBoundMinOf(GameObject obj) {
@@ -68,7 +63,7 @@ public class GenerateObjects : MonoBehaviour {
         // List<List<>> is list of scriptable objects (e.g. all the scriptable sphere objs)
 
         List<List<GameObject>> spheresList = new List<List<GameObject>>();
-        for (int i = 0; i < sizeList.Count; i++) {
+        for (int i = 0; i < Metadata.sizeList.Count; i++) {
             spheresList.Add(new List<GameObject>());
 
             // if Obj is interactive then load asset from interactive folder else non-interactive
@@ -78,14 +73,14 @@ public class GenerateObjects : MonoBehaviour {
             Vector3 minBorder, maxBorder;
             int count;
             if (isInteractive) {
-                count = INTERACTIVE_COUNT;
-                sObjPath = PATH_TO_ASSET_INTERACTIVE;
+                count = Metadata.INTERACTIVE_COUNT;
+                sObjPath = Metadata.PATH_TO_ASSET_INTERACTIVE;
                 minBorder = getBoundMinOf(groundActiveZone);
                 maxBorder = getBoundMaxOf(groundActiveZone);
             }
             else {
-                count = NONINTERACTIVE_COUNT;
-                sObjPath = PATH_TO_ASSET_NONINTERACTIVE;
+                count = Metadata.NONINTERACTIVE_COUNT;
+                sObjPath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
                 minBorder = getBoundMinOf(ground);
                 maxBorder = getBoundMaxOf(ground);
             }
@@ -103,7 +98,7 @@ public class GenerateObjects : MonoBehaviour {
                 else
                     tempVec = RandomizeVector3Except(getBoundMinOf(groundActiveZone), getBoundMaxOf(groundActiveZone), minBorder, maxBorder);
 
-                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, 30f), tempVec.z);
+                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, Metadata.HEIGHT_MAX), tempVec.z);
 
                 if (DEBUG_MODE)
                     if (!isInteractive) Debug.Log("Position of NonInteractive Object: " + newPosition);
@@ -116,7 +111,7 @@ public class GenerateObjects : MonoBehaviour {
             // Add Display Script to the Scriptable object
             foreach (GameObject sphere in spheresList[i]) {
                 SphereDisplay displayScript = sphere.AddComponent<SphereDisplay>() as SphereDisplay;
-                displayScript.sphere = (Sphere)AssetDatabase.LoadAssetAtPath(sObjPath + "Sphere " + sizeList[i] + ".asset", typeof(Sphere));
+                displayScript.sphere = (Sphere)AssetDatabase.LoadAssetAtPath(sObjPath + "Sphere " + Metadata.sizeList[i] + ".asset", typeof(Sphere));
             }
 
         }
@@ -127,7 +122,7 @@ public class GenerateObjects : MonoBehaviour {
         // List<List<>> is list of scriptable objects (e.g. all the scriptable cube objs)
 
         List<List<GameObject>> cubesList = new List<List<GameObject>>();
-        for (int i = 0; i < sizeList.Count; i++) {
+        for (int i = 0; i < Metadata.sizeList.Count; i++) {
             cubesList.Add(new List<GameObject>());
 
             // if Obj is interactive then load asset from interactive folder else non-interactive
@@ -137,14 +132,14 @@ public class GenerateObjects : MonoBehaviour {
             Vector3 minBorder, maxBorder;
             int count;
             if (isInteractive) {
-                count = INTERACTIVE_COUNT;
-                sObjPath = PATH_TO_ASSET_INTERACTIVE;
+                count = Metadata.INTERACTIVE_COUNT;
+                sObjPath = Metadata.PATH_TO_ASSET_INTERACTIVE;
                 minBorder = getBoundMinOf(groundActiveZone);
                 maxBorder = getBoundMaxOf(groundActiveZone);
             }
             else {
-                count = NONINTERACTIVE_COUNT;
-                sObjPath = PATH_TO_ASSET_NONINTERACTIVE;
+                count = Metadata.NONINTERACTIVE_COUNT;
+                sObjPath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
                 minBorder = getBoundMinOf(ground);
                 maxBorder = getBoundMaxOf(ground);
             }
@@ -162,7 +157,7 @@ public class GenerateObjects : MonoBehaviour {
                 else
                     tempVec = RandomizeVector3Except(getBoundMinOf(groundActiveZone), getBoundMaxOf(groundActiveZone), minBorder, maxBorder);
 
-                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, 30f), tempVec.z);
+                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, Metadata.HEIGHT_MAX), tempVec.z);
 
                 if (DEBUG_MODE)
                     if (!isInteractive) Debug.Log("Position of NonInteractive Object: " + newPosition);
@@ -175,7 +170,7 @@ public class GenerateObjects : MonoBehaviour {
             // Add Display Script to the Scriptable object
             foreach (GameObject cube in cubesList[i]) {
                 CubeDisplay displayScript = cube.AddComponent<CubeDisplay>() as CubeDisplay;
-                displayScript.cube = (Cube)AssetDatabase.LoadAssetAtPath(sObjPath + "Cube " + sizeList[i] + ".asset", typeof(Cube));
+                displayScript.cube = (Cube)AssetDatabase.LoadAssetAtPath(sObjPath + "Cube " + Metadata.sizeList[i] + ".asset", typeof(Cube));
             }
 
         }
@@ -186,7 +181,7 @@ public class GenerateObjects : MonoBehaviour {
         // List<List<>> is list of scriptable objects (e.g. all the scriptable cylinder objs)
 
         List<List<GameObject>> cylindersList = new List<List<GameObject>>();
-        for (int i = 0; i < sizeList.Count; i++) {
+        for (int i = 0; i < Metadata.sizeList.Count; i++) {
             cylindersList.Add(new List<GameObject>());
 
             // if Obj is interactive then load asset from interactive folder else non-interactive
@@ -196,14 +191,14 @@ public class GenerateObjects : MonoBehaviour {
             Vector3 minBorder, maxBorder;
             int count;
             if (isInteractive) {
-                count = INTERACTIVE_COUNT;
-                sObjPath = PATH_TO_ASSET_INTERACTIVE;
+                count = Metadata.INTERACTIVE_COUNT;
+                sObjPath = Metadata.PATH_TO_ASSET_INTERACTIVE;
                 minBorder = getBoundMinOf(groundActiveZone);
                 maxBorder = getBoundMaxOf(groundActiveZone);
             }
             else {
-                count = NONINTERACTIVE_COUNT;
-                sObjPath = PATH_TO_ASSET_NONINTERACTIVE;
+                count = Metadata.NONINTERACTIVE_COUNT;
+                sObjPath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
                 minBorder = getBoundMinOf(ground);
                 maxBorder = getBoundMaxOf(ground);
             }
@@ -221,7 +216,7 @@ public class GenerateObjects : MonoBehaviour {
                 else
                     tempVec = RandomizeVector3Except(getBoundMinOf(groundActiveZone), getBoundMaxOf(groundActiveZone), minBorder, maxBorder);
 
-                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, 30f), tempVec.z);
+                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, Metadata.HEIGHT_MAX), tempVec.z);
 
                 if (DEBUG_MODE)
                     if (! isInteractive) Debug.Log("Position of NonInteractive Object: " + newPosition);
@@ -234,7 +229,7 @@ public class GenerateObjects : MonoBehaviour {
             // Add Display Script to the Scriptable object
             foreach (GameObject cylinder in cylindersList[i]) {
                 CylinderDisplay displayScript = cylinder.AddComponent<CylinderDisplay>() as CylinderDisplay;
-                displayScript.cylinder = (Cylinder)AssetDatabase.LoadAssetAtPath(sObjPath + "Cylinder " + sizeList[i] + ".asset", typeof(Cylinder));
+                displayScript.cylinder = (Cylinder)AssetDatabase.LoadAssetAtPath(sObjPath + "Cylinder " + Metadata.sizeList[i] + ".asset", typeof(Cylinder));
             }
 
         }
@@ -242,10 +237,12 @@ public class GenerateObjects : MonoBehaviour {
 
     void Start() {
         bool isInteractive = true;
-        //CreateScriptableObjects.CreateAsset(sizeList, isInteractive=true);
-        //CreateScriptableObjects.CreateAsset(sizeList, isInteractive = false);
+        CreateScriptableObjects.CreateAsset(Metadata.sizeList, isInteractive=true);
+        CreateScriptableObjects.CreateAsset(Metadata.sizeList, isInteractive = false);
         GenerateSphere(isInteractive=false);
+        GenerateSphere(isInteractive = true);
         GenerateCube(isInteractive = true);
+        GenerateCube(isInteractive = false);
         GenerateCylinder(isInteractive=true);
         GenerateCylinder(isInteractive = false);
     }

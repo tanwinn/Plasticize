@@ -54,7 +54,8 @@ public class FPSController : MonoBehaviour {
         var movementVector = new Vector3(0f, 0f, 0f);
         if (gestureManager.name != "deactivate")
             // up arrow
-            if (gestureManager.name == "forwardGesture") movementVector.z = movementAmount;
+            if (gestureManager.name == "forwardGesture")
+                movementVector.z = movementAmount;
             // down arrow
             if (gestureManager.name == "backwardGesture") movementVector.z = -movementAmount;
         // Using Translate allows you to move while taking the current rotation into consideration

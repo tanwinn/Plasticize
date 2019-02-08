@@ -2,14 +2,14 @@
 using System.Collections;
 using UnityEditor;
 using System.Collections.Generic;
-
+using SeniorIS;
 
 public class CreateScriptableObjects : MonoBehaviour {
     // Script to create scriptable cubes, sppheres, and cyllinders with random materials
-    static string PATH_TO_ASSET = "Assets/Mine/";
-    static string PATH_TO_ASSET_INTERACTIVE = PATH_TO_ASSET + "Prefab-Interactive/";
-    static string PATH_TO_ASSET_NONINTERACTIVE = PATH_TO_ASSET + "Prefab-NonInteractive/";
-
+    //static string PATH_TO_ASSET = "Assets/Mine/";
+    //static string PATH_TO_ASSET_INTERACTIVE = PATH_TO_ASSET + "Prefab-Interactive/";
+    //static string PATH_TO_ASSET_NONINTERACTIVE = PATH_TO_ASSET + "Prefab-NonInteractive/";
+    //static Static Metadata = ScriptableObject.CreateInstance<Static>();
 
     static void createSphereAsset(List<float> sizeList, bool isInteractive) {
         for (int i = 0; i < sizeList.Count; i++) {
@@ -21,9 +21,9 @@ public class CreateScriptableObjects : MonoBehaviour {
             asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
 
             // Save Asset
-            string savePath = PATH_TO_ASSET_INTERACTIVE;
+            string savePath = Metadata.PATH_TO_ASSET_INTERACTIVE;
             if (!isInteractive)
-                savePath = PATH_TO_ASSET_NONINTERACTIVE;
+                savePath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
             AssetDatabase.CreateAsset(asset, savePath + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
         }
@@ -41,9 +41,9 @@ public class CreateScriptableObjects : MonoBehaviour {
             asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
 
             // Save Asset
-            string savePath = PATH_TO_ASSET_INTERACTIVE;
+            string savePath = Metadata.PATH_TO_ASSET_INTERACTIVE;
             if (!isInteractive)
-                savePath = PATH_TO_ASSET_NONINTERACTIVE;
+                savePath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
             AssetDatabase.CreateAsset(asset, savePath + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
 
@@ -61,9 +61,9 @@ public class CreateScriptableObjects : MonoBehaviour {
             asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
 
             // Save Asset
-            string savePath = PATH_TO_ASSET_INTERACTIVE;
+            string savePath = Metadata.PATH_TO_ASSET_INTERACTIVE;
             if (!isInteractive)
-                savePath = PATH_TO_ASSET_NONINTERACTIVE;
+                savePath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
             AssetDatabase.CreateAsset(asset, savePath + newAssetName + ".asset");
             AssetDatabase.SaveAssets();
 
