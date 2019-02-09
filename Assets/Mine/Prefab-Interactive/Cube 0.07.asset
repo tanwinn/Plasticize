@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Cube 0.07
   m_EditorClassIdentifier: 
   size: 0.07
-  material: {fileID: 2100000, guid: 31bf6219b1ea6974db18a00b67e6f159, type: 2}
+  material: {fileID: 2100000, guid: a644646fa58414d4d9b714bc1ad0991d, type: 2}
   isInteractive: 1

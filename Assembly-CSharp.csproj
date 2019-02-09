@@ -348,10 +348,13 @@
     <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\Mine\Script\Attractor.cs" />
+    <Compile Include="Assets\Mine\Script\CrossPlatformInput\GestureManager.cs" />
+    <Compile Include="Assets\Mine\Script\CrossPlatformInput\LeapInput.cs" />
     <Compile Include="Assets\Mine\Script\FPSController.cs" />
     <Compile Include="Assets\Mine\Script\GenerateObjects.cs" />
     <Compile Include="Assets\Mine\Script\Grenade.cs" />
     <Compile Include="Assets\Mine\Script\LevelChanger.cs" />
+    <Compile Include="Assets\Mine\Script\Metadata.cs" />
     <Compile Include="Assets\Mine\Script\RandomizeMaterial.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\CreateInventoryItemList.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\CreateScriptableObjects.cs" />
@@ -364,6 +367,7 @@
     <Compile Include="Assets\Mine\Script\ScriptableObjects\InventoryItemList.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\Sphere.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\SphereDisplay.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptExample.cs" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\LeapMotion\Core\Resources\LeapCG.cginc" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
