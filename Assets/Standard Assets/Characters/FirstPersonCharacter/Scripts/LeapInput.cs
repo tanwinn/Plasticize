@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.EventSystems;
 using System;
+using Leap;
 using UnityStandardAssets.Characters;
+using GestureManager = List<Detector>;
 
 //namespace UnityStandardAssets.Characters.FirstPerson { 
 namespace SeniorIS {
@@ -16,12 +18,15 @@ namespace SeniorIS {
         // VirtualAxis: Horizontol = left(-1) + right(+1)
         PointerEventData EventData;
 
-        public static GameObject GestureManager;
+        // public static GameObject GestureManager;
+        
+        public static GestureManager GestureManager;
+
         //public static GestureManager 
-        static AxisTouchButton verticalPositiveButton;
-        static AxisTouchButton verticalNegativeButton;
-        static AxisTouchButton horizontalPositiveButton;
-        static AxisTouchButton horizontalNegativeButton;
+        static VirtualButton verticalPositiveButton;
+        static VirtualButton verticalNegativeButton;
+        static VirtualButton horizontalPositiveButton;
+        static VirtualButton horizontalNegativeButton;
 
         public enum AxisOption {
             // Options for which axes to use
@@ -45,12 +50,7 @@ namespace SeniorIS {
             m_UseX = (axesToUse == AxisOption.Both || axesToUse == AxisOption.OnlyHorizontal);
             m_UseY = (axesToUse == AxisOption.Both || axesToUse == AxisOption.OnlyVertical);
 
-            CreateVirtualButton();
-            //CreateVirtualAxes();
-            //AssignButton();
-            // testing OnPointer
-            OnPressed(EventData, verticalPositiveButton);
-            DataProcessing(EventData);
+            CreateVirtualButton(GestureManager);
         }
 
         void DataProcessing(PointerEventData EventData) {
@@ -58,26 +58,34 @@ namespace SeniorIS {
             Debug.Log(EventData.IsPointerMoving());
         }
 
-        public void OnPressed(PointerEventData EventData, AxisTouchButton button) {
+        public void OnPressed(PointerEventData EventData, VirtualButton button) {
             Debug.Log("before OnPointerDown: " + CrossPlatformInputManager.GetAxis(button.axisName));
             button.OnPointerDown(EventData);
             Debug.Log("After OnPointerDown: " + CrossPlatformInputManager.GetAxis(button.axisName));
         }
 
-        void CreateVirtualButton() {
+
+        void CreateVirtualButton(GestureManager GestureManager) {
+            for (Detector gesture in GestureManager) {
+                // registerButton
+                // RegisterVirtualButton(gesture.name, gesture.matchWith, gesture.axisName);
+
+
+
+            }
             //CrossPlatformInputManager.VirtualButton LeapGesture = new CrossPlatformInputManager.VirtualButton("forwardGesture", false);
             //CrossPlatformInputManager.RegisterVirtualButton(LeapGesture);
             
-            // Horizontal
-            if (m_UseX) {
-                horizontalPositiveButton = new AxisTouchButton(horizontalAxisName, 1);
-                horizontalNegativeButton = new AxisTouchButton(horizontalAxisName, -1);
-            }
-            // Vertical
-            if (m_UseY) {
-                verticalPositiveButton = new AxisTouchButton(verticalAxisName, 1);
-                verticalNegativeButton = new AxisTouchButton(verticalAxisName, -1);
-            }
+            // // Horizontal
+            // if (m_UseX) {
+            //     horizontalPositiveButton = new VirtualButton(horizontalAxisName, 1);
+            //     horizontalNegativeButton = new VirtualButton(horizontalAxisName, -1);
+            // }
+            // // Vertical
+            // if (m_UseY) {
+            //     verticalPositiveButton = new VirtualButton(verticalAxisName, 1);
+            //     verticalNegativeButton = new VirtualButton(verticalAxisName, -1);
+            // }
             
     }
 
