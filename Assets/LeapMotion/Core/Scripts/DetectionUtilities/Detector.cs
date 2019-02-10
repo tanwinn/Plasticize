@@ -36,6 +36,7 @@ namespace Leap.Unity {
      */
     public bool IsActive{ get{ return _isActive;}}
     private bool _isActive = false;
+    public string name;
     /** Dispatched when the detector activates (becomes true). 
      * @since 4.1.2
      */

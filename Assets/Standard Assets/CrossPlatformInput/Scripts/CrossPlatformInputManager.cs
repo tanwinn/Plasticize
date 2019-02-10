@@ -244,27 +244,36 @@ namespace UnityStandardAssets.CrossPlatformInput
 		{
 			public string name { get; private set; }
 			public bool matchWithInputManager { get; private set; }
-			public VirtualAxis axisName {get; set; }
-			public enum value {
-				positive
-				negative
-			}
-			public value = value.positive { set; get; };
+			public string axisName {get; set; }
+			public float axisValue { set; get; }
+            public float responseSpeed { set; get; }
+            public float returnToCentreSpeed { set; get; }
 
-			private int m_LastPressedFrame = -5;
+            private int m_LastPressedFrame = -5;
 			private int m_ReleasedFrame = -5;
 			private bool m_Pressed;
 
 
-			public VirtualButton(string name)
-				: this(name, true)
+			public VirtualButton(string name, string axisName, float axisValue)
+				: this(name, axisName, axisValue, true)
 			{
 			}
 
+            public VirtualButton(string name)
+                : this(name, true) 
+            {
+            }
 
-			public VirtualButton(string name, bool matchToInputSettings)
+            public VirtualButton(string name, bool matchToInputSettings) {
+                this.name = name;
+                this.matchWithInputManager = matchWithInputManager;
+            }
+
+			public VirtualButton(string name, string axisName, float axisValue, bool matchToInputSettings)
 			{
 				this.name = name;
+                this.axisName = axisName;
+                this.axisValue = axisValue;
 				matchWithInputManager = matchToInputSettings;
 			}
 
