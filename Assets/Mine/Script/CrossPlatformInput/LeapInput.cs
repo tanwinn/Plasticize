@@ -16,8 +16,8 @@ namespace SeniorIS.CrossPlatformInput {
         // control system in Unity
         // VirtualButton object: e.g. up, down, left, right arrow keys, etc.
         // VirtualAxis: Horizontol = left(-1) + right(+1)
-        
-        public static List<Gesture> GestureManager;
+        public GameObject LeapInputTesting;
+        public List<Gesture> GestureManager;
         //public static List<Detector> DetectorManager;
         //List<CrossPlatformInputManager.VirtualButton> VirtualButtonManager;
 
@@ -26,7 +26,8 @@ namespace SeniorIS.CrossPlatformInput {
             foreach (Gesture gesture in GestureManager) {
                 CrossPlatformInputManager.VirtualButton vButton = new CrossPlatformInputManager.VirtualButton(gesture.detector.name, gesture.axisName, gesture.axisValue);
                 gesture.vButton = vButton;
-                
+                vButton.returnToCentreSpeed = gesture.returnToCentreSpeed;
+                vButton.responseSpeed = gesture.responseSpeed;
                 CrossPlatformInputManager.RegisterVirtualButton(vButton);
             }
         }
@@ -57,6 +58,7 @@ namespace SeniorIS.CrossPlatformInput {
         }
         // https://answers.unity.com/questions/217941/onenable-awake-start-order.html
         void OnEnable() {
+            GestureManager = LeapInputTesting.GetComponent<List<Gesture>>();
             CreateVirtualButtons();
             CreateVirtualAxes();
         }
@@ -69,7 +71,7 @@ namespace SeniorIS.CrossPlatformInput {
                 value = Mathf.MoveTowards(currentAxis.GetValue, button.axisValue, button.responseSpeed * Time.deltaTime);
             }
             else {
-                value = Mathf.MoveTowards(currentAxis.GetValue, 0, button.responseSpeed * Time.deltaTime);
+                value = Mathf.MoveTowards(currentAxis.GetValue, 0, button.returnToCentreSpeed * Time.deltaTime);
             }
             currentAxis.Update(value);
         }
