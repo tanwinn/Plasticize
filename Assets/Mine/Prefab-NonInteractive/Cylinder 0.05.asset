@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 0.05
   height: 0.1
-  material: {fileID: 2100000, guid: 31bf6219b1ea6974db18a00b67e6f159, type: 2}
+  material: {fileID: 2100000, guid: 19c58ff343327e24e95f8b3b9ce2eedd, type: 2}
   isInteractive: 0

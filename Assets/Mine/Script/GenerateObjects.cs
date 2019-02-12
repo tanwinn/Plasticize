@@ -205,11 +205,11 @@ public class GenerateObjects : MonoBehaviour {
 
 
             for (int cylinderObjCounter = 0; cylinderObjCounter < count; cylinderObjCounter++) {
-                // create the primitive shape
+                // Create the primitive shape
                 cylindersList[i].Add(GameObject.CreatePrimitive(PrimitiveType.Cylinder));
                 GameObject current = cylindersList[i][cylinderObjCounter];
 
-                // Randomize position
+                // Randomize position Vector3
                 Vector3 tempVec;
                 if (isInteractive)
                     tempVec = RandomizeVector3(minBorder, maxBorder);
@@ -221,7 +221,7 @@ public class GenerateObjects : MonoBehaviour {
                 if (DEBUG_MODE)
                     if (! isInteractive) Debug.Log("Position of NonInteractive Object: " + newPosition);
                 
-                // Transform
+                // Transform random position & rotation
                 current.transform.position = newPosition;
                 current.transform.rotation = Random.rotationUniform;
             }
@@ -245,6 +245,9 @@ public class GenerateObjects : MonoBehaviour {
         GenerateCube(isInteractive = false);
         GenerateCylinder(isInteractive=true);
         GenerateCylinder(isInteractive = false);
+        //LeapMotionControllerCrossPlatform test = new LeapMotionControllerCrossPlatform();
+        //GameObject test = new GameObject();
+        //test.AddComponent<LeapMotionControllerCrossPlatform>();
     }
     
 }
