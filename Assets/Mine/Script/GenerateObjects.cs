@@ -20,7 +20,7 @@ public class GenerateObjects : MonoBehaviour {
     public bool generateCube = true;
     public bool generateCylinder = true;
 
-    static private bool DEBUG_MODE = false;
+    static private bool DEBUG_MODE =true;
 
     Vector3 RandomizeVector3(Vector3 min, Vector3 max) {
         float rand_x = Random.Range(min.x, max.x-.26f);
@@ -112,7 +112,7 @@ public class GenerateObjects : MonoBehaviour {
                 else
                     tempVec = RandomizeVector3Except(getBoundMinOf(smallZone), getBoundMaxOf(smallZone), minBorder, maxBorder);
 
-                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(0, HeightMax), tempVec.z);
+                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(transform.position.y, transform.position.y+HeightMax), tempVec.z);
 
                 if (DEBUG_MODE)
                     if (!isInteractive) Debug.Log("Position of NonInteractive Object: " + newPosition);
@@ -176,7 +176,7 @@ public class GenerateObjects : MonoBehaviour {
                 else
                     tempVec = RandomizeVector3Except(getBoundMinOf(smallZone), getBoundMaxOf(smallZone), minBorder, maxBorder);
 
-                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, HeightMax), tempVec.z);
+                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(transform.position.y, transform.position.y+HeightMax), tempVec.z);
 
                 if (DEBUG_MODE)
                     if (!isInteractive) Debug.Log("Position of NonInteractive Object: " + newPosition);
@@ -240,7 +240,10 @@ public class GenerateObjects : MonoBehaviour {
                 else
                     tempVec = RandomizeVector3Except(getBoundMinOf(smallZone), getBoundMaxOf(smallZone), minBorder, maxBorder);
 
-                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(tempVec.y + 5, HeightMax), tempVec.z);
+                Vector3 newPosition = new Vector3(tempVec.x, Random.Range(transform.position.y, transform.position.y+HeightMax), tempVec.z);
+
+                if (DEBUG_MODE)
+                    Debug.Log("Position in world space of y vertex: " + transform.position.y);
 
                 if (DEBUG_MODE)
                     if (! isInteractive) Debug.Log("Position of NonInteractive Object: " + newPosition);
@@ -259,15 +262,19 @@ public class GenerateObjects : MonoBehaviour {
         }
     }
 
+
+
     void Start() {
         bool isInteractive;
         // Caution: Should only use this to generate the asset at the beginning, never at run-time!!  
         // Because the assets will be overrided if there are multiple Generate Object scripts on the scene
+        // leads to run-time error
+        //
         //CreateScriptableObjects.CreateAsset(sizeList, isInteractive = true);
         //CreateScriptableObjects.CreateAsset(sizeList, isInteractive = false);
 
         if (wrappedZone != null) {
-            if (generateCube) GenerateCube(isInteractive = isWrapedZoneActive, (wrappedZone==null));
+            if (generateCube) GenerateCube(isInteractive = isWrapedZoneActive, (wrappedZone == null));
             if (generateSphere) GenerateSphere(isInteractive = isWrapedZoneActive, (wrappedZone == null));
             if (generateCylinder) GenerateCylinder(isInteractive = isWrapedZoneActive, (wrappedZone == null));
         }

@@ -403,7 +403,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1842282417525994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46877113, y: 0, z: -0.53454757}
+  m_LocalPosition: {x: 0.40587106, y: 0.24141051, z: -0.54739225}
   m_LocalScale: {x: 0.0625, y: 0.25, z: 0.125}
   m_Children: []
   m_Father: {fileID: 4260033142927370}
@@ -1077,17 +1077,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776fd17ae2bc3ec47a8ef49fe13bbfeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrapedZone: {fileID: 0}
+  wrappedZone: {fileID: 0}
   isWrapedZoneActive: 0
   smallZone: {fileID: 1842282417525994}
   isSmallZoneActive: 0
   sizeList:
   - 0.05
-  - 0.01
-  HeightMax: 0.03
+  - 0.07
+  - 0.02
+  HeightMax: 0.7
   InteractiveCount: 50
-  NonInteractiveCount: 10
-  generateSphere: 0
+  NonInteractiveCount: 40
+  generateSphere: 1
   generateCube: 1
   generateCylinder: 1
 --- !u!114 &114733008070258724
@@ -49015,14 +49016,6 @@ MonoBehaviour:
     angleError: 8
     areaError: 15
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 7a020000
-  m_SelectedEdges:
-  - x: 2066
-    y: 2067
-  - x: 2068
-    y: 2066
-  - x: 2069
-    y: 2068
-  - x: 2067
-    y: 2069
-  m_selectedTriangles: 12080000130800001408000015080000
+  m_selectedFaces: 
+  m_SelectedEdges: []
+  m_selectedTriangles: 
