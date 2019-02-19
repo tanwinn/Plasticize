@@ -1,0 +1,8 @@
+newmtl [0004_HotPink]
+Kd 0.4313725 0.3960784 0.3803921
+d 1
+
+newmtl [Color_C06]
+Kd 0.8 0.4 0
+d 1
+

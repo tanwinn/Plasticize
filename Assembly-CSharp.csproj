@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Examples\Projection-mapping-example\Scripts\RandomLightIntensity.cs" />
+    <Compile Include="Assets\Import-OtherParty\Flag With Cloth Physics\Script\Movement.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -358,6 +359,8 @@
     <Compile Include="Assets\Mine\Script\LeapInputTesting.cs" />
     <Compile Include="Assets\Mine\Script\LevelChanger.cs" />
     <Compile Include="Assets\Mine\Script\Metadata.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\BezierCurve.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\SimplifiedRopePhysics.cs" />
     <Compile Include="Assets\Mine\Script\RandomizeMaterial.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\CreateInventoryItemList.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\CreateScriptableObjects.cs" />
@@ -371,6 +374,7 @@
     <Compile Include="Assets\Mine\Script\ScriptableObjects\Sphere.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\SphereDisplay.cs" />
     <Compile Include="Assets\Mine\Script\ScriptExample.cs" />
+    <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ComponentIndex.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Culling.cs" />
@@ -419,6 +423,7 @@
     <None Include="Assets\ProCore\Polybrush\Shader\z_BaseWithDecals.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
     <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
+    <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ACES.cginc" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendMobile_SfSrc.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
