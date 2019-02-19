@@ -60,7 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Examples\Projection-mapping-example\Scripts\RandomLightIntensity.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\DoorDetectionLite.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\DoorRotationLite.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\ConditionalHideAttribute.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\RotationTools.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\StayPositiveAttribute.cs" />
     <Compile Include="Assets\Import-OtherParty\Flag With Cloth Physics\Script\Movement.cs" />
+    <Compile Include="Assets\JointAutoRotate.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
