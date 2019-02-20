@@ -19,13 +19,14 @@ public class GenerateObjects : MonoBehaviour {
     public bool generateSphere = true;
     public bool generateCube = true;
     public bool generateCylinder = true;
-
-    static private bool DEBUG_MODE =true;
+    public bool boyanceSimulate = false;
+    static private bool DEBUG_MODE = false;
+    private bool isModified = false;
 
     Vector3 RandomizeVector3(Vector3 min, Vector3 max) {
-        float rand_x = Random.Range(min.x, max.x-.26f);
-        float rand_y = Random.Range(min.y, max.y-.22f);
-        float rand_z = Random.Range(min.z, max.z-.27f);
+        float rand_x = Random.Range(min.x, max.x);
+        float rand_y = Random.Range(min.y, max.y);
+        float rand_z = Random.Range(min.z, max.z);
         return new Vector3(rand_x, rand_y, rand_z);
     }
     
@@ -122,10 +123,15 @@ public class GenerateObjects : MonoBehaviour {
                 current.transform.rotation = Random.rotationUniform;
             }
 
-            // Add Display Script to the Scriptable object
             foreach (GameObject sphere in spheresList[i]) {
+                // Add Display Script to the Scriptable object
                 SphereDisplay displayScript = sphere.AddComponent<SphereDisplay>() as SphereDisplay;
                 displayScript.sphere = (Sphere)AssetDatabase.LoadAssetAtPath(sObjPath + "Sphere " + Metadata.sizeList[i] + ".asset", typeof(Sphere));
+
+
+                // Add Floating script if boyanceSimulate is true
+                if (boyanceSimulate)
+                    sphere.AddComponent<ObjectFloat>();
             }
 
         }
@@ -186,10 +192,15 @@ public class GenerateObjects : MonoBehaviour {
                 current.transform.rotation = Random.rotationUniform;
             }
 
-            // Add Display Script to the Scriptable object
             foreach (GameObject cube in cubesList[i]) {
+                // Add Display Script to the Scriptable object
                 CubeDisplay displayScript = cube.AddComponent<CubeDisplay>() as CubeDisplay;
                 displayScript.cube = (Cube)AssetDatabase.LoadAssetAtPath(sObjPath + "Cube " + Metadata.sizeList[i] + ".asset", typeof(Cube));
+
+                // Add Floating script if boyanceSimulate is true
+                if (boyanceSimulate)
+                    cube.AddComponent<ObjectFloat>();
+
             }
 
         }
@@ -253,16 +264,35 @@ public class GenerateObjects : MonoBehaviour {
                 current.transform.rotation = Random.rotationUniform;
             }
 
-            // Add Display Script to the Scriptable object
             foreach (GameObject cylinder in cylindersList[i]) {
+                // Add Display Script to the Scriptable object
                 CylinderDisplay displayScript = cylinder.AddComponent<CylinderDisplay>() as CylinderDisplay;
                 displayScript.cylinder = (Cylinder)AssetDatabase.LoadAssetAtPath(sObjPath + "Cylinder " + Metadata.sizeList[i] + ".asset", typeof(Cylinder));
+
+                // Add Floating script if boyanceSimulate is true
+                if (boyanceSimulate)
+                    cylinder.AddComponent<ObjectFloat>();
             }
 
         }
     }
 
+    public enum Trash {
+        sphere,
+        cube,
+        cylinder
+    }
 
+
+    public void generateMore(Trash input, bool isInteractive) {    
+        if (input == Trash.sphere)
+            GenerateSphere(isInteractive = isSmallZoneActive, true);
+        else if (input == Trash.cube)
+            GenerateCube(isInteractive = isSmallZoneActive, true);
+        else if (input == Trash.cylinder)
+            GenerateCylinder(isInteractive = isSmallZoneActive, true);
+    }
+    
 
     void Start() {
         bool isInteractive;
@@ -283,6 +313,21 @@ public class GenerateObjects : MonoBehaviour {
             if (generateCube) GenerateCube(isInteractive = isSmallZoneActive, (wrappedZone == null));
             if (generateSphere) GenerateSphere(isInteractive = isSmallZoneActive, (wrappedZone == null));
             if (generateCylinder) GenerateCylinder(isInteractive = isSmallZoneActive, (wrappedZone == null));
+        }
+    }
+
+    private int counter = 0;
+
+    private void Update() {
+        if (Random.Range(-1f, 1f) > 0) {
+            if (counter < 10) {
+                Debug.Log("counter: " + counter);
+                //if (counter % 3 == 0) generateMore(Trash.cylinder, false);
+                //else if (counter % 3 == 1) generateMore(Trash.cube, false);
+                //else if (counter % 3 == 2) generateMore(Trash.sphere, false);
+                counter++;
+                generateMore(Trash.cube, false);
+            }
         }
     }
 

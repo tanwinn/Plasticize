@@ -9,10 +9,10 @@ public class CubeDisplay : MonoBehaviour {
         GetComponent<Renderer>().material = cube.material;
         name = cube.name;
         transform.localScale = new Vector3(cube.size, cube.size, cube.size);
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>() as Rigidbody;
+        //rb.mass = cube.mass;
         if (cube.isInteractive)
             gameObject.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();
-        else
-            gameObject.AddComponent<Rigidbody>();
     }
 
     // Keeps track of the change for ome-time update
@@ -31,8 +31,10 @@ public class CubeDisplay : MonoBehaviour {
             else if (gameObject.GetComponent<Leap.Unity.Interaction.InteractionBehaviour>()) {
                 //Debug.Log("Destroy Interaction Behaviour");
                 Destroy(gameObject.GetComponent<Leap.Unity.Interaction.InteractionBehaviour>());
-                if (gameObject.GetComponent<Rigidbody>() == null)
-                    gameObject.AddComponent<Rigidbody>();
+                if (gameObject.GetComponent<Rigidbody>() == null) {
+                    Rigidbody rb = gameObject.AddComponent<Rigidbody>() as Rigidbody;
+                    //rb.mass = cube.mass;
+                }
             }
             ObjectIsModified = false;
         }

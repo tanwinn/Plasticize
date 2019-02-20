@@ -8,4 +8,5 @@ public class Cylinder : ScriptableObject {
     public float height = .07f;
     public Material material;
     public bool isInteractive = false;
+    public float mass = .5f;
 }

@@ -10,10 +10,10 @@ public class CylinderDisplay : MonoBehaviour {
         GetComponent<Renderer>().material = cylinder.material;
         name = cylinder.name;
         transform.localScale = new Vector3(cylinder.width, cylinder.height, cylinder.width);
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>() as Rigidbody;
+        //rb.mass = cylinder.mass;
         if (cylinder.isInteractive)
-            gameObject.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();
-        else
-            gameObject.AddComponent<Rigidbody>();
+            gameObject.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();   
     }
     
     // Keeps track of the change for ome-time update

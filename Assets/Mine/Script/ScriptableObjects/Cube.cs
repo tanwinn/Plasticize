@@ -7,4 +7,5 @@ public class Cube : ScriptableObject {
     public float size = .1f;
     public Material material;
     public bool isInteractive = false;
+    public float mass = .5f;
 }
