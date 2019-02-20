@@ -8,13 +8,13 @@ using UnityEngine;
 
 public class ObjectFloat : MonoBehaviour {
 
-	public float waterLevel = .7f;
+	public float waterLevel = .85f;
 
 	public float floatThreshold = 2f;
 
 	public float waterDensity = .8f;
 
-	public float downForce = .7f;
+	public float downForce = .5f;
 
 	private float forceFactor;
 

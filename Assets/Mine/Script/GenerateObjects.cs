@@ -320,13 +320,13 @@ public class GenerateObjects : MonoBehaviour {
 
     private void Update() {
         if (Random.Range(-1f, 1f) > 0) {
-            if (counter < 10) {
+            if (counter < 16) {
                 Debug.Log("counter: " + counter);
-                //if (counter % 3 == 0) generateMore(Trash.cylinder, false);
-                //else if (counter % 3 == 1) generateMore(Trash.cube, false);
-                //else if (counter % 3 == 2) generateMore(Trash.sphere, false);
+                if (counter % 3 == 0) generateMore(Trash.cylinder, false);
+                else if (counter % 3 == 1) generateMore(Trash.cube, false);
+                else if (counter % 3 == 2) generateMore(Trash.sphere, false);
                 counter++;
-                generateMore(Trash.cube, false);
+                //generateMore(Trash.cube, false);
             }
         }
     }
