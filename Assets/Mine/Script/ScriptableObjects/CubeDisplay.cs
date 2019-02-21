@@ -16,6 +16,7 @@ public class CubeDisplay : DisplayScript {
             gameObject.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();
     }
 
+    #region Deprecated
     //// Keeps track of the change for ome-time update
     //private bool ObjectIsModified = false;
 
@@ -40,4 +41,6 @@ public class CubeDisplay : DisplayScript {
     //        ObjectIsModified = false;
     //    }
     //}
+
+    #endregion
 }

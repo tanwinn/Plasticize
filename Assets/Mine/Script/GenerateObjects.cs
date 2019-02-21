@@ -7,25 +7,33 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using SeniorIS;
 
+[System.Serializable]
 public class GenerateObjects : MonoBehaviour {
+    # region Attributes
     public GameObject wrappedZone = null;
     public bool isWrappedZoneActive = false;
     public GameObject smallZone = null;
     public bool isSmallZoneActive = true;
+
     public List<float> sizeList = Metadata.sizeList;
     public float HeightMax = Metadata.HEIGHT_MAX;
     public int InteractiveCount = Metadata.INTERACTIVE_COUNT;
     public int NonInteractiveCount = Metadata.NONINTERACTIVE_COUNT;
+
     public bool generateSphere = true;
     public bool generateCube = true;
     public bool generateCylinder = true;
     public bool boyanceSimulate = false;
+
     public bool generateMoreAfterStart = true;
     public int generateCounter = 16;
+
     static private bool DEBUG_MODE = false;
     private bool isModified = false;
 
+    #endregion
 
+    #region Helper Functions
     Vector3 RandomizeVector3(Vector3 min, Vector3 max) {
         float rand_x = Random.Range(min.x, max.x);
         float rand_y = Random.Range(min.y, max.y);
@@ -163,6 +171,7 @@ public class GenerateObjects : MonoBehaviour {
             }
         }
     }
+    #endregion
 
     void Start() {
         bool isInteractive;

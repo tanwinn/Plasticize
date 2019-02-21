@@ -26,7 +26,7 @@ public class CreateScriptableObjects : MonoBehaviour {
     }
 
     public static void CreateAllAssets(List<float> sizeList, bool isInteractive = true) {
-        if (sizeList.Count == 0) Debug.Log("ERROR:: CreateScriptableObjects.CreateAsset: missing sizeList!");
+        if (sizeList.Count == 0) Debug.LogError("CreateScriptableObjects.CreateAsset: missing sizeList!");
         CreateAsset(Metadata.trash.cube, sizeList, isInteractive);
         CreateAsset(Metadata.trash.cylinder, sizeList, isInteractive);
         CreateAsset(Metadata.trash.sphere, sizeList, isInteractive);

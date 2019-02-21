@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-//[RequireComponent (typeof (Rigidbody))]
 
 public class ObjectFloat : MonoBehaviour {
-
-	public float waterLevel = .85f;
+    #region Attributes
+    public float waterLevel = .85f;
 
 	public float floatThreshold = 2f;
 
@@ -21,13 +20,14 @@ public class ObjectFloat : MonoBehaviour {
 	private Vector3 floatForce;
 
     private static Rigidbody rb;
+    #endregion
 
     private void Start() {
         rb = GetComponent<Rigidbody>() as Rigidbody;
         if (rb == null) {
+            Debug.LogWarning("ObjectFloat.cs component of " + this + " does not have a Rigidbody. Adding Rigidbody");
             gameObject.AddComponent<Rigidbody>();
         }
-        
     }
 
     void FixedUpdate () {
