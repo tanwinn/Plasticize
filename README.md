@@ -1,4 +1,4 @@
-## Unity3D VR with HTC Vive and Leap Motion
+)## Unity3D VR with HTC Vive and Leap Motion
 __Thanh Nguyen - College of Wooster 2019__
 
 Studio Art & Computer Science Senior Independent Thesis
@@ -11,7 +11,7 @@ A Unity project that integrates Leap Motion technology for gestural commands and
 
 Unity 1.2f.2018
 
-Leap Motion Orion Core Asset 4.4.0 and Interaction Engine 1.2.0 ([more](https://developer.leapmotion.com/unity/#5436356)]
+Leap Motion Orion Core Asset 4.4.0 and Interaction Engine 1.2.0 ([more](https://developer.leapmotion.com/unity/#5436356))
 
 
 ### Clone the project
