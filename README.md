@@ -1,4 +1,4 @@
-)## Unity3D VR with HTC Vive and Leap Motion
+## Unity3D VR with HTC Vive and Leap Motion
 __Thanh Nguyen - College of Wooster 2019__
 
 Studio Art & Computer Science Senior Independent Thesis
