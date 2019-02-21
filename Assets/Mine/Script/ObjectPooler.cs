@@ -10,10 +10,24 @@ public class ObjectPooler : MonoBehaviour {
     public class Pool {
         public string tag;
         // number of object
+
+        [Header("Pool Settings")]
         public int poolSize;
         public float objectSize;
-        public bool isInteractive = false;        
+
+        [Header("Objects in Pool Settings")]
+        public bool isInteractive = false;  
         public bool boyanceSimulate = false;
+        public bool addForceToObject = true;
+
+        [ConditionalHide("addForceToObject")]
+        public float upForce = 25f;
+        public float sideForce = 7f;
+
+        [Header("boyanceSimulate")]
+        public float waterLevel = .85f;
+
+        [HideInInspector]
         public DisplayScript displayScript;
     }
     #endregion
@@ -41,7 +55,7 @@ public class ObjectPooler : MonoBehaviour {
         return key;
     }
     
-    void OnEnable() {
+    void Start() {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools) {
@@ -50,9 +64,10 @@ public class ObjectPooler : MonoBehaviour {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
             for (int i = 0; i < pool.poolSize; i++) {
-                
                 #region Instantiate game object to put into the pool
+
                 GameObject obj = GameObject.CreatePrimitive(Metadata.trashType[trashType]);
+                
                 if (trashType == Metadata.trash.cylinder)
                     pool.displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
                 else
@@ -70,13 +85,20 @@ public class ObjectPooler : MonoBehaviour {
                     pool.displayScript.scriptObject = (Shape)AssetDatabase.LoadAssetAtPath(assetPath + Metadata.trashString[trashType] + pool.objectSize + ".asset", typeof(Shape));
                 }
 
-                if (pool.boyanceSimulate)
-                    obj.AddComponent<ObjectFloat>();
+                if (pool.boyanceSimulate) {
+                    ObjectFloat flooaty = obj.AddComponent<ObjectFloat>() as ObjectFloat;
+                    flooaty.waterLevel = pool.waterLevel;
+                }
 
-                obj.AddComponent<ObjectForce>();
+                if (pool.addForceToObject) {
+                    ObjectForce force = obj.AddComponent<ObjectForce>() as ObjectForce;
+                    force.upForce = pool.upForce;
+                    force.sideForce = pool.sideForce;
+                }
 
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
+
                 #endregion
             }
 
@@ -85,12 +107,11 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
-    public void SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
         if (!poolDictionary.ContainsKey(tag)) {
             Debug.LogWarning("Pool with tag " + tag + " doesn't exist");
-            //return null;
+            return null;
         }
-
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
         objectToSpawn.SetActive(true);
@@ -101,10 +122,10 @@ public class ObjectPooler : MonoBehaviour {
 
         if (pooledObj != null)
             pooledObj.OnSpawnedObject();
-
+        
         poolDictionary[tag].Enqueue(objectToSpawn);
 
-        //return objectToSpawn;
+        return objectToSpawn;
     }
 
 }
