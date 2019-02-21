@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1109e2406c60fe41b70810394ad8c05, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d30756c4916cd4479e467c8912e140e, type: 3}
   m_Name: Sphere 0.07
   m_EditorClassIdentifier: 
   size: 0.07
-  material: {fileID: 2100000, guid: a644646fa58414d4d9b714bc1ad0991d, type: 2}
+  material: {fileID: 2100000, guid: 31bf6219b1ea6974db18a00b67e6f159, type: 2}
   isInteractive: 1
