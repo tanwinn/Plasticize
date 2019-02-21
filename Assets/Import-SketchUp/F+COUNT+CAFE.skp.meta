@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: 4901a432e28bfd941bf71f091b40b18f
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 00000000010000000200000003000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 3e864e9f1e55f4f7c6236812b6c4874a
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 8.313358, y: 3.267483, z: 3.8026934}
+      lookAt: {x: -14.009703, y: -4.9212017, z: -2.2642024}
+      up: {x: -0.32201517, y: 0.94268084, z: -0.08751633}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: 'Soup 50p        '
+    400000: //RootNode
+    400002: 'Soup 50p        '
+    2100000: _defaultMat
+    2100002: '[Metal_Brass_Ceiling]'
+    2100004: '[Metal_Steel_Textured]'
+    2100006: '[Metal_Panel]'
+    2100008: '[Metal_Aluminum_Anodized]'
+    2100010: '[Water_Deep]'
+    2100012: '[Metal_Corrogated_Shiny]'
+    2100014: '[Color_000]'
+    2100016: '[Tile_Checker_BW]'
+    2100018: '[Translucent_Glass_Sky_Reflection]'
+    2100020: '[Metal_Embossed]'
+    2100022: '[Water_Sparkling]'
+    2100024: '[Metal_Steel_Textured_White]'
+    2100026: '[Color_H01]'
+    2100028: '[Color_H11]'
+    2100030: '[Color_B02]'
+    2100032: '[Color_002]'
+    2100034: '[Color_A06]'
+    2300000: //RootNode
+    2300002: 'Soup 50p        '
+    3300000: //RootNode
+    3300002: 'Soup 50p        '
+    4300000: Mesh F+COUNT+CAFE
+    4300002: 'Mesh Soup 50p        '
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

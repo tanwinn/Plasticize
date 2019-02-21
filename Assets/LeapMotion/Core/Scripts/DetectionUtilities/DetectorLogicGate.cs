@@ -41,7 +41,7 @@ namespace Leap.Unity {
      */
     [Tooltip("Add all detectors on this object automatically.")]
     public bool AddAllSiblingDetectorsOnAwake = true;
-
+   
     /**
      * The type of logic for this gate: AND or OR.
      * @since 4.1.2

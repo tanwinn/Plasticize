@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{FE6EE127-3D6E-8BA8-FF6F-7299DAE52706}</ProjectGuid>
+    <ProjectGuid>{85C8FC44-95A2-0CF9-EF16-426F727DBE72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,7 +59,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_App\Scripts\RandomLightIntensity.cs" />
+    <Compile Include="Assets\Examples\Projection-mapping-example\Scripts\RandomLightIntensity.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\DoorDetectionLite.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\DoorRotationLite.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\ConditionalHideAttribute.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\RotationTools.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\StayPositiveAttribute.cs" />
+    <Compile Include="Assets\Import-OtherParty\Flag With Cloth Physics\Script\Movement.cs" />
+    <Compile Include="Assets\JointAutoRotate.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -303,111 +312,200 @@
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\IgnoreCollisionsInChildren.cs" />
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\KabschSolver.cs" />
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\PhysicsCallbacks.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\BloomComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\DitheringComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\FogComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\FxaaComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\GrainComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\TaaComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\UserLutComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Components\VignetteComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\BloomModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\FogModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\GrainModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\UserLutModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Models\VignetteModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\PostProcessingComponent.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\PostProcessingContext.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\PostProcessingModel.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\PostProcessingProfile.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+    <Compile Include="Assets\Mine\Script\Attractor.cs" />
+    <Compile Include="Assets\Mine\Script\CrossPlatformInput\Gesture.cs" />
+    <Compile Include="Assets\Mine\Script\CrossPlatformInput\LeapInput.cs" />
+    <Compile Include="Assets\Mine\Script\CrossPlatformInput\LeapInput-old.cs" />
+    <Compile Include="Assets\Mine\Script\FPSController.cs" />
+    <Compile Include="Assets\Mine\Script\GenerateObjects.cs" />
+    <Compile Include="Assets\Mine\Script\Grenade.cs" />
+    <Compile Include="Assets\Mine\Script\LeapFPSController.cs" />
+    <Compile Include="Assets\Mine\Script\LeapInputTesting.cs" />
+    <Compile Include="Assets\Mine\Script\LevelChanger.cs" />
+    <Compile Include="Assets\Mine\Script\Metadata.cs" />
+    <Compile Include="Assets\Mine\Script\ObjectPooler.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\BezierCurve.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\SimplifiedRopePhysics.cs" />
+    <Compile Include="Assets\Mine\Script\RandomizeMaterial.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptableObjects\CreateScriptableObjects.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptableObjects\CubeDisplay.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptableObjects\CylinderDisplay.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptableObjects\DisplayScript.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptableObjects\ObjectFloat.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptableObjects\Shape.cs" />
+    <Compile Include="Assets\Mine\Script\ScriptExample.cs" />
+    <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ComponentIndex.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Culling.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Direction.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_MeshChannel.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_MirrorCoordinateSpace.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ModelSource.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_PaintMode.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_PlacementDirection.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_SelectionRenderState.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\MonoBehaviour\z_AdditionalVertexStreams.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\MonoBehaviour\z_OverlayRenderer.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\MonoBehaviour\z_ZoomOverride.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_AttributeLayout.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_ColorMask.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_CommonEdge.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_Edge.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_GradientSerializer.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_IHasDefault.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_IValid.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_Mesh.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_RndVec3.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_SplatSet.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_SplatWeight.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Math.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_MeshUtility.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Util.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Vector.cs" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlend_SfSrc.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendMobile.shader" />
+    <None Include="Assets\ProCore\Polybrush\README.txt" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlendLegacy_SfSrc.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendHeight.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendWithVertexColor.shader" />
     <None Include="Assets\LeapMotion\Core\Resources\LeapCG.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Fog.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendHeight_SfSrc.shader" />
     <None Include="Assets\LeapMotion\Core\README_BEFORE_UPDATING.txt" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\LutGen.shader" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend.shader" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_BaseWithDecals.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
+    <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
+    <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ACES.cginc" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendMobile_SfSrc.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\LeapMotion\Core\readme.txt" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlendLegacy.shader" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\LeapMotion\Core\Shaders\RuntimeGizmos.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Uber.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Blit.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendModulate.shader" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\FXAA3.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
     <None Include="Assets\LeapMotion\Core\Dependencies.txt" />
-    <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_VertexBillboard.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendBmp.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\LeapMotion\Core\Shaders\ThresholdOverlay.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+    <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend_WithMetaData.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Common.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
     <None Include="Assets\LeapMotion\Core\Shaders\PassthroughForeground.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlendAndSnow.shader" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\UI\Trackball.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_StandardVertexColor.shader" />
     <None Include="Assets\LeapMotion\Core\Shaders\PassthroughBackground.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Bloom.cginc" />
+    <None Include="Assets\ProCore\Polybrush\Shader\Noise.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\TAA.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\TAA.cginc" />
+    <None Include="Assets\ProCore\Polybrush\Font\SIL Open Font License.txt" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\GrainGen.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\FXAA.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_DiffuseVertexColor.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender_SfSrc.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Bloom.shader" />
     <None Include="Assets\LeapMotion\Core\Version.txt" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendBmp_SfSrc.shader" />
     <None Include="Assets\LeapMotion\Core\Shaders\VertexOffsetShader.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlend.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendWithVertexColor_SfSrc.shader" />
+    <None Include="Assets\Mine\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_Overlay.shader" />
+    <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+    <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendModulate_SfSrc.shader" />
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -605,10 +703,25 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="InteractionEngineUtility">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderCore">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderMeshOps">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
+    </Reference>
+    <Reference Include="KdTreeLib">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="pb_Stl">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+    </Reference>
+    <Reference Include="Poly2Tri">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
@@ -643,7 +756,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{19C35C94-613A-0E13-5BA4-C85614547BA5}</Project>
+      <Project>{D51DD3A1-D2E9-B1A7-F7A0-EACC15B89A0F}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>

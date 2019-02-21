@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{753D034E-84AF-8500-29CA-0DE7531CC32D}</ProjectGuid>
+    <ProjectGuid>{EC5499B0-1B10-0B40-AB7B-300ACE83B868}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -59,6 +59,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\ChangeLog.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\ConditionalHidePropertyDrawer.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\DoorDetectionLiteEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\DoorRotationLiteEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\EditorStylesHelper.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\ErrorWindow.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\SupportWindow.cs" />
+    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\TagHelper.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CorePreferences.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CustomEditorBase.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CustomPropertyDrawerBase.cs" />
@@ -122,51 +130,107 @@
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\UI\Editor\InteractionButtonEditor.cs" />
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\UI\Editor\InteractionSliderEditor.cs" />
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\Editor\IgnoreColliderForInteractionEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\BloomModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\ColorGradingModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\DefaultPostFxModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\EyeAdaptationModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\FogModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\GrainModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\MotionBlurModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\UserLutModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\HistogramMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\ParadeMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\WaveformMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingBehaviourEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingFactory.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingInspector.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\CurveEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\EditorGUIHelper.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\EditorResources.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\FxStyles.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\BloomModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\ColorGradingModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\DefaultPostFxModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\EyeAdaptationModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\FogModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\GrainModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\MotionBlurModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\UserLutModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Monitors\HistogramMonitor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Monitors\ParadeMonitor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Monitors\WaveformMonitor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PostProcessingBehaviourEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PostProcessingFactory.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PostProcessingInspector.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PostProcessingModelEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PostProcessingMonitor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\CurveEditor.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\EditorGUIHelper.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\EditorResources.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\FxStyles.cs" />
+    <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushMode.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModeMesh.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModePaint.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModePrefab.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModeRaiseLower.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModeSculpt.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModeSmooth.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModeTexture.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_BrushSettings.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_BrushTarget.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_ColorPalette.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_Delegate.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_EditableObject.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_LocalPref.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_PrefabAndSettings.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_PrefabPalette.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_PreferenceDictionary.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_RaycastHit.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Classes\z_ReflectionUtil.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Enum\z_BrushTool.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_About.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_AdditionalVertexStreamsEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_AttributeLayoutContainerEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_AttributeLayoutJsonEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_BlendMaterialInspector.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_BrushSettingsEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_ColorPaletteEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_Editor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_GlobalSettingsEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_MeshFilterEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_PrefabPaletteEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_PreferenceDictionaryEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_SplatWeightEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Interface\z_ZoomOverrideEditor.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_AssetPreview.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_BakeAdditionalVertexStreams.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_Debug.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_EditorUtility.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_GUI.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_GUILayout.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_Handles.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_IconImporter.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_IconUtility.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_PostProcessTextureBlend.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_Pref.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_SceneUtility.cs" />
+    <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Utility\z_ShaderUtil.cs" />
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -406,7 +470,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="InteractionEngineUtility">
-      <HintPath>C:/Users/tnguyen19/git/MySeniorIS/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
+      <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -416,6 +480,27 @@
     </Reference>
     <Reference Include="UnityEditor.Analytics">
       <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/Editor/UnityEditor.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetIdRemapUtility">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/AssetIdRemapUtility/Editor/AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderCore">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderMeshOps">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
+    </Reference>
+    <Reference Include="KdTreeLib">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="pb_Stl">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+    </Reference>
+    <Reference Include="Poly2Tri">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderEditor">
+      <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Editor/ProBuilderEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/tnguyen19/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
@@ -456,15 +541,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{19C35C94-613A-0E13-5BA4-C85614547BA5}</Project>
+      <Project>{D51DD3A1-D2E9-B1A7-F7A0-EACC15B89A0F}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{FE6EE127-3D6E-8BA8-FF6F-7299DAE52706}</Project>
+      <Project>{85C8FC44-95A2-0CF9-EF16-426F727DBE72}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{F6DAC914-2C34-B672-59B4-67630C30E2FD}</Project>
+      <Project>{83973A24-E0BC-40FD-A61C-BEAAA1FEA9BA}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
