@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿// SourceCode: https://www.youtube.com/watch?v=tdSmKaJvCoA
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SeniorIS;
 using UnityEditor;
+
+
 
 public class ObjectPooler : MonoBehaviour {
     #region Pool class
@@ -17,15 +20,16 @@ public class ObjectPooler : MonoBehaviour {
 
         [Header("Objects in Pool Settings")]
         public bool isInteractive = false;  
-        public bool boyanceSimulate = false;
+        
         public bool addForceToObject = true;
+        [ConditionalHide("addForceToObject")] public float upForce = 25f;
+        [ConditionalHide("addForceToObject")] public float sideForce = 7f;
 
-        [ConditionalHide("addForceToObject")]
-        public float upForce = 25f;
-        public float sideForce = 7f;
-
-        [Header("boyanceSimulate")]
-        public float waterLevel = .85f;
+        public bool boyanceSimulate = false;
+        [ConditionalHide("boyanceSimulate")] public float waterLevel = .85f;
+        [ConditionalHide("boyanceSimulate")] public float floatThreshold = 2f;
+        [ConditionalHide("boyanceSimulate")] public float waterDensity = .8f;
+        [ConditionalHide("boyanceSimulate")] public float downForce = .5f;
 
         [HideInInspector]
         public DisplayScript displayScript;
@@ -55,7 +59,7 @@ public class ObjectPooler : MonoBehaviour {
         return key;
     }
     
-    void Start() {
+    private void CreatePools() {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools) {
@@ -64,47 +68,51 @@ public class ObjectPooler : MonoBehaviour {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
             for (int i = 0; i < pool.poolSize; i++) {
+                GameObject obj = GameObject.CreatePrimitive(Metadata.trashType[trashType]);
                 #region Instantiate game object to put into the pool
 
-                GameObject obj = GameObject.CreatePrimitive(Metadata.trashType[trashType]);
-                
                 if (trashType == Metadata.trash.cylinder)
                     pool.displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
                 else
                     pool.displayScript = obj.AddComponent<CubeDisplay>() as CubeDisplay;
 
-                string assetPath;
-                if (pool.isInteractive)
-                    assetPath = Metadata.PATH_TO_ASSET_INTERACTIVE;
-                else
-                    assetPath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
-
-                pool.displayScript.scriptObject = (Shape)AssetDatabase.LoadAssetAtPath(assetPath + Metadata.trashString[trashType] + pool.objectSize + ".asset", typeof(Shape));
-                if (pool.displayScript.scriptObject == null) {
-                    CreateScriptableObjects.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive);
-                    pool.displayScript.scriptObject = (Shape)AssetDatabase.LoadAssetAtPath(assetPath + Metadata.trashString[trashType] + pool.objectSize + ".asset", typeof(Shape));
-                }
-
+                ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
+                ScriptableAssetManager.LoadAsset(trashType, pool.objectSize, pool.isInteractive);
+                
+                // Add Floating script if boyanceSimulate is true
                 if (pool.boyanceSimulate) {
                     ObjectFloat flooaty = obj.AddComponent<ObjectFloat>() as ObjectFloat;
                     flooaty.waterLevel = pool.waterLevel;
+                    flooaty.floatThreshold = pool.floatThreshold;
+                    flooaty.waterDensity = pool.waterDensity;
+                    flooaty.downForce = pool.downForce;
                 }
 
+                // Add Force script if addForceToObject is true
                 if (pool.addForceToObject) {
                     ObjectForce force = obj.AddComponent<ObjectForce>() as ObjectForce;
                     force.upForce = pool.upForce;
                     force.sideForce = pool.sideForce;
                 }
 
+                #endregion
+
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
-
-                #endregion
+                
             }
 
             // each pool has a unique tag
             poolDictionary.Add(pool.tag, objectPool);
         }
+    }
+
+    private void OnEnable() {
+        CreatePools();
+    }
+
+    private void Start() {
+        CreatePools();
     }
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {

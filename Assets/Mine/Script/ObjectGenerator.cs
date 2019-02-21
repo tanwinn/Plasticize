@@ -26,12 +26,20 @@ public class ObjectGenerator : MonoBehaviour {
     public float RandomHeightMax = Metadata.HEIGHT_MAX;
     public int interactiveCount = Metadata.INTERACTIVE_COUNT;
     public int nonInteractiveCount = Metadata.NONINTERACTIVE_COUNT;
-    public bool boyanceSimulate = false;
 
-    
-    [Header("Generate More Settings")]
-    public bool generateMoreAfterStart = true;
-    public int generateCounter = 16;
+    public bool addForceToObject = false;
+    [ConditionalHide("addForceToObject")] public float upForce = 25f;
+    [ConditionalHide("addForceToObject")] public float sideForce = 7f;
+
+    public bool boyanceSimulate = false;
+    [ConditionalHide("boyanceSimulate")] public float waterLevel = .85f;
+    [ConditionalHide("boyanceSimulate")] public float floatThreshold = 2f;
+    [ConditionalHide("boyanceSimulate")] public float waterDensity = .8f;
+    [ConditionalHide("boyanceSimulate")] public float downForce = .5f;
+
+    [Header("Generate More After Start")]
+    public bool generateMore = true;
+    [ConditionalHide("generateMore")] public int generateCounter = 16;
 
     static private bool DEBUG_MODE = false;
     [System.Obsolete]
@@ -97,19 +105,15 @@ public class ObjectGenerator : MonoBehaviour {
         for (int i = 0; i < Metadata.sizeList.Count; i++) {
             objectList.Add(new List<GameObject>());
 
-            // if Obj is interactive then load asset from interactive folder else non-interactive
             // interactive objs are in active zone else outside of active zone
-
-            string sObjPath;
+            
             Vector3 minBorder, maxBorder;
             int count;
             if (isInteractive) {
                 count = interactiveCount;
-                sObjPath = Metadata.PATH_TO_ASSET_INTERACTIVE;
             }
             else {
                 count = nonInteractiveCount;
-                sObjPath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
             }
 
             if (smallAreaOnly) {
@@ -152,28 +156,39 @@ public class ObjectGenerator : MonoBehaviour {
                 else
                     displayScript = gObject.AddComponent<CubeDisplay>() as CubeDisplay;
 
-                displayScript.scriptObject = (Shape)AssetDatabase.LoadAssetAtPath(sObjPath + Metadata.trashString[trashShape] + sizeList[i] + ".asset", typeof(Shape));
+                displayScript.scriptObject = ScriptableAssetManager.LoadAsset(trashShape, sizeList[i], isInteractive) as Shape;
 
                 // Add Floating script if boyanceSimulate is true
-                if (boyanceSimulate)
-                    gObject.AddComponent<ObjectFloat>();
+                if (boyanceSimulate) {
+                    ObjectFloat flooaty = gObject.AddComponent<ObjectFloat>() as ObjectFloat;
+                    flooaty.waterLevel = waterLevel;
+                    flooaty.floatThreshold = floatThreshold;
+                    flooaty.waterDensity = waterDensity;
+                    flooaty.downForce = downForce;
+                }
+
+                // Add Force script if addForceToObject is true
+                if (addForceToObject) {
+                    ObjectForce forcey = gObject.AddComponent<ObjectForce>() as ObjectForce;
+                    forcey.upForce = upForce;
+                    forcey.sideForce = sideForce;
+                }
             }
 
         }
     }
 
-
-    private int counter = 0;
+    private int GLOBAL_COUNTER = 0;
 
     private void GenerateMoreRandomly(int input) {
         if (Random.Range(-1f, 1f) > 0) {
-            if (counter < input) {
+            if (GLOBAL_COUNTER < input) {
                 if (DEBUG_MODE)
-                    Debug.Log("counter: " + counter);
-                if (counter % 3 == 0) GenerateMore(Metadata.trash.cylinder, false);
-                else if (counter % 3 == 1) GenerateMore(Metadata.trash.cube, false);
-                else if (counter % 3 == 2) GenerateMore(Metadata.trash.sphere, false);
-                counter++;
+                    Debug.Log("counter: " + GLOBAL_COUNTER);
+                if (GLOBAL_COUNTER % 3 == 0) GenerateMore(Metadata.trash.cylinder, false);
+                else if (GLOBAL_COUNTER % 3 == 1) GenerateMore(Metadata.trash.cube, false);
+                else if (GLOBAL_COUNTER % 3 == 2) GenerateMore(Metadata.trash.sphere, false);
+                GLOBAL_COUNTER++;
             }
         }
     }
@@ -181,12 +196,13 @@ public class ObjectGenerator : MonoBehaviour {
 
     void Start() {
         bool isInteractive;
+        bool overrideAsset;
         // Caution: Should only use this to generate the asset at the beginning, never at run-time!!  
         // Because the assets will be overrided if there are multiple Generate Object scripts on the scene
         // leads to run-time error
         //
-        CreateScriptableObjects.CreateAllAssets(sizeList, isInteractive = true);
-        CreateScriptableObjects.CreateAllAssets(sizeList, isInteractive = false);
+        ScriptableAssetManager.CreateAllAssets(sizeList, isInteractive = true, overrideAsset = false);
+        ScriptableAssetManager.CreateAllAssets(sizeList, isInteractive = false, overrideAsset = false);
 
         if (wrappedZone != null) {
             if (generateCube) GenerateGameObject(Metadata.trash.cube, isInteractive = isWrappedZoneActive, wrappedZone == null);
@@ -202,7 +218,7 @@ public class ObjectGenerator : MonoBehaviour {
     }
 
     private void Update() {
-        if (generateMoreAfterStart)
+        if (generateMore)
             GenerateMoreRandomly(generateCounter);
     }
 

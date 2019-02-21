@@ -28,5 +28,6 @@ namespace SeniorIS {
             { trash.cube,  PrimitiveType.Cube},
             { trash.sphere,  PrimitiveType.Sphere}
         };
+        
     }
 }
