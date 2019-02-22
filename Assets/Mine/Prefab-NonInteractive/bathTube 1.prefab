@@ -16716,19 +16716,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wrappedZone: {fileID: 0}
-  isWrapedZoneActive: 0
+  isWrappedZoneActive: 0
   smallZone: {fileID: 1896627905783612}
   isSmallZoneActive: 0
-  sizeList:
-  - 0.1
-  - 0.07
-  HeightMax: 0.3
-  InteractiveCount: 0
-  NonInteractiveCount: 20
   generateSphere: 1
   generateCube: 1
   generateCylinder: 1
+  sizeList:
+  - 0.1
+  - 0.07
+  RandomHeightMax: 20
+  interactiveCount: 20
+  nonInteractiveCount: 100
+  addForceToObject: 0
+  upForce: 25
+  sideForce: 7
   boyanceSimulate: 1
+  waterLevel: 0.85
+  floatThreshold: 2
+  waterDensity: 0.8
+  downForce: 0.5
+  generateMore: 1
+  generateCounter: 16
 --- !u!114 &114440365444080784
 MonoBehaviour:
   m_ObjectHideFlags: 1

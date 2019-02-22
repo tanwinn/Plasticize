@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1876858483630932}
+  m_IsPrefabParent: 1
+--- !u!1 &1876858483630932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4872427500831310}
+  - component: {fileID: 114267682692227282}
+  - component: {fileID: 114923733907618242}
+  m_Layer: 0
+  m_Name: Pooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4872427500831310
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1876858483630932}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4.1887245, y: 1.0835623, z: -6.53557}
+  m_LocalScale: {x: 1.0937525, y: 1.0937496, z: 1.0937527}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &114267682692227282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1876858483630932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f7f4d47b0629542a7762720883d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Sphere
+    poolSize: 20
+    objectSize: 0.12
+    isInteractive: 0
+    addForceToObject: 1
+    upForce: 0.6
+    sideForce: 1
+    randomFloater:
+      min: 0.5
+      max: 1.5
+    velocity: 5
+    angularVelocity:
+      min: 0
+      max: 4
+    randomVelocity:
+      min: 0
+      max: 3
+    boyanceSimulate: 1
+    waterLevel: 0.85
+    floatThreshold: 2
+    waterDensity: 0.8
+    downForce: 0.05
+    displayScript: {fileID: 0}
+--- !u!114 &114923733907618242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1876858483630932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064020e8d2ae63d4682b171ef9d3011d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Sphere
+  timeBetweenSpawns:
+    min: 0
+    max: 0
+  tiltAngle: -20

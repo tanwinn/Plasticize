@@ -1,23 +1,55 @@
-﻿using System.Collections;
+﻿// SourceCode: https://www.youtube.com/watch?v=tdSmKaJvCoA
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SeniorIS;
 using UnityEditor;
 
 public class ObjectPooler : MonoBehaviour {
+    #region Pool class
     [System.Serializable]
     public class Pool {
         public string tag;
         // number of object
+
+        [Header("Pool Settings")]
         public int poolSize;
         public float objectSize;
-        public bool isInteractive = false;        
-        public bool boyanceSimulate = false;
-        public DisplayScript displayScript;
+
+        [Header("Objects in Pool Settings")]
+        public bool isInteractive = false;  
         
+        public bool addForceToObject = true;
+        [ConditionalHide("addForceToObject")] public float upForce = 25f;
+        [ConditionalHide("addForceToObject")] public float sideForce = 7f;
+
+        [Header("Random float range 0.5 to 2")]
+        public FloatRange randomFloater;
+
+        [Header("Velocity")]
+        public float velocity;
+        public FloatRange angularVelocity;
+        public FloatRange randomVelocity;
+
+        public bool boyanceSimulate = false;
+        [ConditionalHide("boyanceSimulate")] public float waterLevel = .85f;
+        [ConditionalHide("boyanceSimulate")] public float floatThreshold = 2f;
+        [ConditionalHide("boyanceSimulate")] public float waterDensity = .8f;
+        [ConditionalHide("boyanceSimulate")] public float downForce = .5f;
+
+        [HideInInspector]
+        public DisplayScript displayScript;
     }
+    #endregion
 
+    #region Singleton
+    // The pool is only assigned and referred when Awake
+    public static ObjectPooler Instance;
 
+    private void Awake() {
+        Instance = this;
+    }
+    #endregion
 
     public List<Pool> pools;
     Dictionary<string, Queue<GameObject>> poolDictionary;
@@ -32,51 +64,90 @@ public class ObjectPooler : MonoBehaviour {
         }
         return key;
     }
-
-    // Use this for initialization
-    void Start() {
+    
+    private void CreatePools() {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools) {
             Metadata.trash trashType = KeyByValue(Metadata.trashString, pool.tag);
             // create queue for each pool
             Queue<GameObject> objectPool = new Queue<GameObject>();
+            ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
+            Shape sObj = ScriptableAssetManager.LoadAsset(trashType, pool.objectSize, pool.isInteractive);
 
             for (int i = 0; i < pool.poolSize; i++) {
                 GameObject obj = GameObject.CreatePrimitive(Metadata.trashType[trashType]);
+                obj.name = "From" + pool.tag + pool.objectSize + "Pool";
+                #region Instantiate game object to put into the pool
+                
+                DisplayScript displayScript;
                 if (trashType == Metadata.trash.cylinder)
-                    pool.displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
+                    displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
                 else
-                    pool.displayScript = obj.AddComponent<CubeDisplay>() as CubeDisplay;
+                    displayScript = obj.AddComponent<CubeDisplay>() as CubeDisplay;
+                displayScript.scriptObject = sObj;
 
-                string assetPath;
-                if (pool.isInteractive)
-                    assetPath = Metadata.PATH_TO_ASSET_INTERACTIVE;
-                else
-                    assetPath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
-                pool.displayScript.scriptObject = (Shape)AssetDatabase.LoadAssetAtPath(assetPath + Metadata.trashString[trashType] + pool.objectSize + ".asset", typeof(Shape));
-                if (pool.displayScript.scriptObject == null) {
-                    CreateScriptableObjects.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive);
-                    pool.displayScript.scriptObject = (Shape)AssetDatabase.LoadAssetAtPath(assetPath + Metadata.trashString[trashType] + pool.objectSize + ".asset", typeof(Shape));
+                obj.transform.localScale *= pool.randomFloater.RandomInRange;
+
+                // Add Floating script if boyanceSimulate is true
+                if (pool.boyanceSimulate) {
+                    ObjectFloat flooaty = obj.AddComponent<ObjectFloat>() as ObjectFloat;
+                    flooaty.waterLevel = pool.waterLevel;
+                    flooaty.floatThreshold = pool.floatThreshold;
+                    flooaty.waterDensity = pool.waterDensity;
+                    flooaty.downForce = pool.downForce;
                 }
 
-                if (pool.boyanceSimulate)
-                    obj.AddComponent<ObjectFloat>();
+                // Add Force script if addForceToObject is true
+                if (pool.addForceToObject) {
+                    ObjectForce force = obj.AddComponent<ObjectForce>() as ObjectForce;
+                    force.upForce = pool.upForce;
+                    force.sideForce = pool.sideForce;
+                    force.randomVelocity = pool.randomVelocity;
+                    force.angularVelocity = pool.angularVelocity;
+                }
+
+                #endregion
 
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
+                
             }
 
+            // each pool has a unique tag
             poolDictionary.Add(pool.tag, objectPool);
         }
     }
 
-    public void SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
-        
+    private void OnEnable() {
+        CreatePools();
     }
 
-    // Update is called once per frame
-    void Update() {
-
+    private void Start() {
+        CreatePools();
     }
+
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
+        if (!poolDictionary.ContainsKey(tag)) {
+            Debug.LogWarning("Pool with tag " + tag + " doesn't exist");
+            return null;
+        }
+        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
+        objectToSpawn.SetActive(true);
+
+
+
+        IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
+
+        if (pooledObj != null)
+            pooledObj.OnSpawnedObject();
+        //Debug.Log(objectToSpawn.GetComponent<Rigidbody>().velocity);
+        poolDictionary[tag].Enqueue(objectToSpawn);
+
+        return objectToSpawn;
+    }
+
 }

@@ -1,0 +1,290 @@
+[33mcommit 2e1c0945c2311f49b0a5de7f607f3e4aeee622df[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Wed Feb 20 22:51:51 2019 -0500
+
+    Clean up commit: add abstractClass DisplayScript for Cube & Cylinder Display, refactor scriptableObjects to one scriptable object Shape, refactor automated pipeline, wip on ObjectPooling
+
+[33mcommit 945429674752a71efb83997cc426e501973c5779[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Wed Feb 20 12:09:24 2019 -0500
+
+    modeligng scene03
+
+[33mcommit 7ef6310efc72bfe52d394c242b0b7174f452a597[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 19 23:25:33 2019 -0500
+
+    modify bathTube
+
+[33mcommit f1833b8454a07a26eccfbeee5cd3a62e19d4093c[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 19 22:04:15 2019 -0500
+
+    animate bathTube, simulate boyance floating for trash pbjects
+
+[33mcommit 31f7b8ae84c8a7b8169af6bad6091c9d32dc70eb[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 19 18:51:58 2019 -0500
+
+    Scene03: Animation - animate bath Tube spinner
+
+[33mcommit 932c72b14014106f468f9fd30af51c80974bea5d[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 19 18:01:42 2019 -0500
+
+    Using hingeJoint&FixJoint to make door mechanism
+
+[33mcommit bca7741c181aa44b77960644b2aa0fb5d1d2e8be[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 19 00:37:01 2019 -0500
+
+    Add C4D folder, modeling scene3 (ropes & cloths)
+
+[33mcommit cb8ee2f443f293fcd0ff1b3d42e8b72c706afb27[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Feb 18 11:47:23 2019 -0500
+
+    baked lighting
+
+[33mcommit f0b9f9dbbbd5d8dd23ac2602f7e6e900c5f9ee4f[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Feb 17 23:43:23 2019 -0500
+
+    Scene03: add materials, sceneBeginning: testing modified GenerateObject.cs-wip
+
+[33mcommit c1ef30d6c68d08ece68cd9a1f272a5fa3703c961[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Feb 17 16:45:44 2019 -0500
+
+    3D modeling + lighting in scene3, modify genearteObject.cs for more cofigurations (needs testing in scnene Beginning)
+
+[33mcommit 801d44872845aa1d7481e9e4c5ed9c8adf3b95c1[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sat Feb 16 18:53:55 2019 -0500
+
+    Modeling scene01, import PolyBrush
+
+[33mcommit 501ad5f5fbff31a2019fa8c6b502576241de30a0[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 12 17:23:30 2019 -0500
+
+    add interactive trash can to beginning scene
+
+[33mcommit 5e0d7d03b7fbe46bc99a1029b6f660fa0515b4cf[m
+Merge: 206c978 c6e516c
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 12 17:05:55 2019 -0500
+
+    Merge pull request #1 from tanwinn/develop-cafe-fpscontroller
+    
+    Add 3D models - was develop-cafe-fpscontroller
+
+[33mcommit c6e516cdb6ecc507a9ae6965d9908bfd42521040[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 12 17:03:08 2019 -0500
+
+    Add 3D mode;s
+
+[33mcommit b3e9f4e55011ef0c00ac4bb4578aac0ab47a5132[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 12 14:16:57 2019 -0500
+
+    Modify 3d models, create prefabs
+
+[33mcommit 61122936d38652c1055e64b6858b372a4655867a[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 12 00:52:02 2019 -0500
+
+    Add 3Dmodel folder
+
+[33mcommit 87863d813e948e1378da0ea23d5a91038a116962[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 12 00:51:14 2019 -0500
+
+    Add Scene01 - building ProBuilder models - BathTube, warehouse, and recycle machine
+
+[33mcommit 47ccb45ffcff432b5db7866d5568c535ddd52734[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Feb 11 12:49:31 2019 -0500
+
+    ProBuilder; model for scene3
+
+[33mcommit c683617f1b7fc8392f12f1ad81a8da4d0ba841e0[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sat Feb 9 21:36:01 2019 -0500
+
+    Untested LeapInputManager
+
+[33mcommit 7278fdd8d21fc0fbf4541b804b80774b56d14ab2[m
+Author: sunflower33a <tnguyen19@wooster.edu>
+Date:   Sat Feb 9 17:59:36 2019 -0500
+
+    dirty commit
+
+[33mcommit e8176191de8402e8391509692e4fbf854b00b66c[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sat Feb 9 15:30:39 2019 -0500
+
+    WIP: fpscontroller & leapInput VirtualAxis
+
+[33mcommit 206c978a6f9c3532e2aa09de34892ac714d2590d[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Thu Feb 7 19:58:47 2019 -0500
+
+    Metadata the filepath
+
+[33mcommit 9ea0668c63128557262e1e73e0b49dd21c583a54[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Feb 5 17:00:46 2019 -0500
+
+    Finish Random serialization of non and interactive scriptable objects on pre-restrcited areas in the Beginning scene
+
+[33mcommit 9258712b9e8e29a1e46e95807b64ae927906acad[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Feb 4 21:10:13 2019 -0500
+
+    Generate Cylinder interactive & noninteractive objects - needs work on positioning randomly non-interactive objs
+
+[33mcommit 7fbf9bb8d779e92f559686903dba58878a4608f2[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Feb 4 18:41:04 2019 -0500
+
+    Scriptable Objects clean commit: generate scriptObj
+
+[33mcommit d42aedff991a1e83f52f23175f9c4e045071fdc4[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Feb 4 01:28:47 2019 -0500
+
+    ScriptableObjects: generate basic sObj - cube, sphere, cylinder - with hard-coded specs, add Inventory Editor (needs more work)
+
+[33mcommit 92df31d8fc90c358630e1c023d98b61c532dc8f4[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Jan 20 16:43:27 2019 -0500
+
+    Add Scriptable Objects - Interactive primitives to Scene01, add generateObjects script
+
+[33mcommit fff80edf2b2ce5ff1b1307e7b7b7e9631ba4eded[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Fri Jan 4 23:51:36 2019 +0700
+
+    Add simple fade in-out animation to beginning scene, test scene changing
+
+[33mcommit 900e81a7b44be264f79e727111ff00d4a4bdb79d[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Jan 1 21:18:48 2019 +0700
+
+    Add Baked lighting to grocery-green
+
+[33mcommit e98f817816d1ef3df3f7d674a622bc4377355b90[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Jan 1 15:52:23 2019 +0700
+
+    Add testLighting scene: add light source for static objects & configure lighting setting for baked lighting
+
+[33mcommit 2457e060eb538f54f08b144350e2fc0734deaf5f[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Dec 31 21:44:35 2018 +0700
+
+    Add Gesture Manager prefab, add gestural locomotion (forward/backward) command, add demo video
+
+[33mcommit 73cf211d7c7b0f593e5a9bee5ce4f8e389917ea8[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Dec 31 01:00:42 2018 +0700
+
+    Add FPSControllerTest script
+
+[33mcommit 1e12b4febc14f36947f3e5b9807f40698a1b2ce3[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Dec 30 20:20:59 2018 +0700
+
+    Add 2D(tested) and 3D(untested) Leap Rig prefab that integrate both rigid hand and interaction manager, add updated rig to sample scenes
+
+[33mcommit 0f79b9c683ba2482efebd5d47ce8b66c3314eff8[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sat Dec 29 17:28:02 2018 +0700
+
+    Add Finger Direction in DesktopController Scene
+
+[33mcommit 145cfff247f7cc4cd393b673b9a9bacb6b3206e6[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sat Dec 29 16:16:28 2018 +0700
+
+    add Desktop LM controller prefab, add interaction layers in interaction manager
+
+[33mcommit c0d9f0f1ab3c00632ef61f1e6433341f37e85ddd[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Mon Dec 3 23:46:31 2018 -0500
+
+    Modify CAFE-Limbo scene: plane walls. Modify sample-scene; construct an controlled interactive room for UI-final
+
+[33mcommit 5bc57f09d3e030c5d76b9c628766812978a24f40[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Wed Nov 28 00:19:02 2018 -0500
+
+    Change sample scene
+
+[33mcommit f80c05130c9c6c4a1f7d692c8a411728396b1442[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Nov 11 14:54:27 2018 -0500
+
+    Minor changes in temporary lighting
+
+[33mcommit 04c622ebba5d87ebe43ee2cc1b1e4a3b4410eb93[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Nov 11 14:12:43 2018 -0500
+
+    Add Cafe-Green scene: add interactive fruits
+
+[33mcommit 8120604beffd0aad8fc19c62176669a2267b9208[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Nov 11 01:56:21 2018 -0500
+
+    Add objects and physics to Beginning Scene
+
+[33mcommit 4cd1d3ad679bc165f022d068ad5d308b489659b0[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Nov 11 00:06:47 2018 -0500
+
+    Basic physics to Cafe scene: add basic physics to all objects, add interaction physics to basic interactive components
+
+[33mcommit dd98319e3491b895d3041f76a3be3e988b8cece1[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sat Nov 10 18:26:46 2018 -0500
+
+    Add basic components to BEGIN SCENE: leap rig, trash can model, and plane
+
+[33mcommit 4425471b1729ae978762637a91fedbb33b64547f[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sat Nov 10 17:40:13 2018 -0500
+
+    Complete base modeling, add texture
+
+[33mcommit 7493f7b016f83fce56beb2c3ac323470a4e74615[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Fri Nov 9 00:01:06 2018 -0500
+
+    Add 3D models to scene: online sketchUpOjects
+
+[33mcommit 0bbe65ec618e13652c61e18ff3fbc999da753e26[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Thu Nov 8 20:18:04 2018 -0500
+
+    Add more 3DWarehouse models into main scene, test 3Dwarehouse models in testing scene, turn off lighting
+
+[33mcommit 78e65b58be87d41a906aa41cd71b43c98c28f5d5[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Wed Nov 7 13:05:11 2018 -0500
+
+    Add lighting, improve physics of interactive objects
+
+[33mcommit f398144223f52423a92bb8739fd1b25bbaf3a1a1[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Tue Nov 6 18:42:14 2018 -0500
+
+    Add basic physic materials & interactive cubes for physic testing
+
+[33mcommit ffb07cd7000ebae824d269f5e8ed86a019a89920[m
+Author: Thanh Nguyen <tnguyen19@wooster.edu>
+Date:   Sun Nov 4 02:40:30 2018 -0500
+
+    Add Cafe scene: integrate Leap Motion controller & behavior interaction engine
