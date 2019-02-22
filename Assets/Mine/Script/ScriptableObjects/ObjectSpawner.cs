@@ -3,37 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using SeniorIS;
 
 public class ObjectSpawner : MonoBehaviour {
     ObjectPooler objectPooler;
     public List<string> Tags;
 
+    public FloatRange timeBetweenSpawns;
+    float currentSpawnDelay;
+
+    public float tiltAngle = -20;
+
+    float timeSinceLastSpawn;
     private void Start() {
         objectPooler = ObjectPooler.Instance;
     }
 
-    private int frame = 0;
-    int waitFrameCount = 10;
-    float beforeTime;
-
-    IEnumerator SpawnFromPool() {
-        foreach (string tag in Tags) {
-            beforeTime = Time.realtimeSinceStartup;
-            Debug.Log("Called SpawnFromPool at " + beforeTime);
-            objectPooler.SpawnFromPool(tag, transform.position, Quaternion.identity);
-            yield return new WaitWhile(() => frame < waitFrameCount);
-        }
+    void SpawnStuff() {
+        foreach (string tag in Tags)
+            objectPooler.SpawnFromPool(tag, transform.position, Random.rotation);
     }
+    
 
-    private void Update() {
-        //float beforeTime = Time.time;
-        StartCoroutine(SpawnFromPool());
-        Debug.Log("Wait time = " + (Time.realtimeSinceStartup - beforeTime));
-        if (frame <= waitFrameCount)
-            frame++;
-        else {
-            frame = 0;
-            waitFrameCount = (int)Random.Range(5, 20);
-        }
+    private void FixedUpdate() {
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn >= currentSpawnDelay) {
+            timeSinceLastSpawn -= currentSpawnDelay;
+            currentSpawnDelay = timeBetweenSpawns.RandomInRange;
+            //objectPooler.SpawnFromPool(tag, transform.position, Quaternion.identity);
+            SpawnStuff();
+        }   
     }
 }

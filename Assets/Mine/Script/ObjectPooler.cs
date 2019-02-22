@@ -23,6 +23,14 @@ public class ObjectPooler : MonoBehaviour {
         [ConditionalHide("addForceToObject")] public float upForce = 25f;
         [ConditionalHide("addForceToObject")] public float sideForce = 7f;
 
+        [Header("Random float range 0.5 to 2")]
+        public FloatRange randomFloater;
+
+        [Header("Velocity")]
+        public float velocity;
+        public FloatRange angularVelocity;
+        public FloatRange randomVelocity;
+
         public bool boyanceSimulate = false;
         [ConditionalHide("boyanceSimulate")] public float waterLevel = .85f;
         [ConditionalHide("boyanceSimulate")] public float floatThreshold = 2f;
@@ -79,6 +87,8 @@ public class ObjectPooler : MonoBehaviour {
                     displayScript = obj.AddComponent<CubeDisplay>() as CubeDisplay;
                 displayScript.scriptObject = sObj;
 
+                obj.transform.localScale *= pool.randomFloater.RandomInRange;
+
                 // Add Floating script if boyanceSimulate is true
                 if (pool.boyanceSimulate) {
                     ObjectFloat flooaty = obj.AddComponent<ObjectFloat>() as ObjectFloat;
@@ -93,6 +103,8 @@ public class ObjectPooler : MonoBehaviour {
                     ObjectForce force = obj.AddComponent<ObjectForce>() as ObjectForce;
                     force.upForce = pool.upForce;
                     force.sideForce = pool.sideForce;
+                    force.randomVelocity = pool.randomVelocity;
+                    force.angularVelocity = pool.angularVelocity;
                 }
 
                 #endregion
@@ -122,9 +134,11 @@ public class ObjectPooler : MonoBehaviour {
         }
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
-        objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
+        objectToSpawn.SetActive(true);
+
+
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
 
