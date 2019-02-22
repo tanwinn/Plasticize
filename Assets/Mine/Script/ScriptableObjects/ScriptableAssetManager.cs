@@ -47,12 +47,7 @@ public class ScriptableAssetManager : MonoBehaviour {
     }
 
     public static Shape LoadAsset(Metadata.trash shape, float size, bool isInteractive) {
-        if (ATrashAssetExists(shape, size, isInteractive))
-            return (Shape)AssetDatabase.LoadAssetAtPath(getPath(isInteractive) + Metadata.trashString[shape] + size + ".asset", typeof(Shape));
-        else {
-            Debug.LogWarning("ScriptableAssetManager.cs: Cannot find asset.");
-            return null;
-        }
+        return (Shape)AssetDatabase.LoadAssetAtPath(getPath(isInteractive) + Metadata.trashString[shape] + size + ".asset", typeof(Shape)) as Shape;
     }
 
     public static bool ATrashAssetExists(Metadata.trash shape, float size, bool isInteractive) {

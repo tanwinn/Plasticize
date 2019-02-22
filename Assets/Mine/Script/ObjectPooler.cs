@@ -5,8 +5,6 @@ using UnityEngine;
 using SeniorIS;
 using UnityEditor;
 
-
-
 public class ObjectPooler : MonoBehaviour {
     #region Pool class
     [System.Serializable]
@@ -66,19 +64,21 @@ public class ObjectPooler : MonoBehaviour {
             Metadata.trash trashType = KeyByValue(Metadata.trashString, pool.tag);
             // create queue for each pool
             Queue<GameObject> objectPool = new Queue<GameObject>();
+            ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
+            Shape sObj = ScriptableAssetManager.LoadAsset(trashType, pool.objectSize, pool.isInteractive);
 
             for (int i = 0; i < pool.poolSize; i++) {
                 GameObject obj = GameObject.CreatePrimitive(Metadata.trashType[trashType]);
+                obj.name = "From" + pool.tag + pool.objectSize + "Pool";
                 #region Instantiate game object to put into the pool
-
-                if (trashType == Metadata.trash.cylinder)
-                    pool.displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
-                else
-                    pool.displayScript = obj.AddComponent<CubeDisplay>() as CubeDisplay;
-
-                ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
-                ScriptableAssetManager.LoadAsset(trashType, pool.objectSize, pool.isInteractive);
                 
+                DisplayScript displayScript;
+                if (trashType == Metadata.trash.cylinder)
+                    displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
+                else
+                    displayScript = obj.AddComponent<CubeDisplay>() as CubeDisplay;
+                displayScript.scriptObject = sObj;
+
                 // Add Floating script if boyanceSimulate is true
                 if (pool.boyanceSimulate) {
                     ObjectFloat flooaty = obj.AddComponent<ObjectFloat>() as ObjectFloat;
@@ -130,7 +130,7 @@ public class ObjectPooler : MonoBehaviour {
 
         if (pooledObj != null)
             pooledObj.OnSpawnedObject();
-        
+        //Debug.Log(objectToSpawn.GetComponent<Rigidbody>().velocity);
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
