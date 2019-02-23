@@ -119,13 +119,14 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
+    private void OnDisable() {
+        poolDictionary.Clear();
+    }
+
     private void OnEnable() {
         CreatePools();
     }
-
-    private void Start() {
-        CreatePools();
-    }
+    
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
         if (!poolDictionary.ContainsKey(tag)) {
@@ -138,13 +139,14 @@ public class ObjectPooler : MonoBehaviour {
         objectToSpawn.transform.rotation = rotation;
         objectToSpawn.SetActive(true);
 
-
+        Debug.Log("objToSpawn size: " + objectToSpawn.transform.localScale);
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
 
         if (pooledObj != null)
             pooledObj.OnSpawnedObject();
         //Debug.Log(objectToSpawn.GetComponent<Rigidbody>().velocity);
+
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;

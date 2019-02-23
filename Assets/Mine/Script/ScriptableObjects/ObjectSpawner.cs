@@ -11,6 +11,7 @@ public class ObjectSpawner : MonoBehaviour {
 
     public FloatRange timeBetweenSpawns;
     float currentSpawnDelay;
+    public float beginDelay = 10;
 
     public float tiltAngle = -20;
 
@@ -27,7 +28,7 @@ public class ObjectSpawner : MonoBehaviour {
 
     private void FixedUpdate() {
         timeSinceLastSpawn += Time.deltaTime;
-        if (timeSinceLastSpawn >= currentSpawnDelay) {
+        if (timeSinceLastSpawn >= currentSpawnDelay && timeSinceLastSpawn >= beginDelay) {
             timeSinceLastSpawn -= currentSpawnDelay;
             currentSpawnDelay = timeBetweenSpawns.RandomInRange;
             //objectPooler.SpawnFromPool(tag, transform.position, Quaternion.identity);

@@ -11,28 +11,29 @@ public class ScriptableAssetManager : MonoBehaviour {
     // Script to create scriptable cubes, sppheres, and cyllinders with random materials
     public static void CreateAsset(Metadata.trash shape, List<float> sizeList, bool isInteractive, bool overrideExistedAssets) {
         foreach (float size in sizeList) {
-            if (!overrideExistedAssets)
+            if (!overrideExistedAssets) {
                 // Make sure the asset doesn't exist
-                if (ATrashAssetExists(shape, size, isInteractive))
-                    break;
-            Shape asset = ScriptableObject.CreateInstance<Shape>();
-            asset.size = size;
-            string newAssetName = Metadata.trashString[shape] + asset.size;
-            asset.isInteractive = isInteractive;
-            // Randomize Material 
-            asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
+                if (!ATrashAssetExists(shape, size, isInteractive)) {
+                    Shape asset = ScriptableObject.CreateInstance<Shape>();
+                    asset.size = size;
+                    string newAssetName = Metadata.trashString[shape] + asset.size;
+                    asset.isInteractive = isInteractive;
+                    // Randomize Material 
+                    asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
 
-            // Save Asset
-            string savePath = Metadata.PATH_TO_ASSET_INTERACTIVE;
-            if (!isInteractive)
-                savePath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
-            AssetDatabase.CreateAsset(asset, savePath + newAssetName + ".asset");
-            AssetDatabase.SaveAssets();
+                    // Save Asset
+                    AssetDatabase.CreateAsset(asset, getPath(isInteractive) + newAssetName + ".asset");
+                    AssetDatabase.SaveAssets();
+                }
+                else {
+                    Debug.LogWarning("Asset " + Metadata.trashString[shape] + size + "already exists!");
+                }
+            }
 
         }
     }
 
-    public static void CreateAllAssets(List<float> sizeList, bool isInteractive = true, bool overrideExistedAssets = true) {
+    public static void CreateAllAssets(List<float> sizeList, bool isInteractive = true, bool overrideExistedAssets = false) {
         if (sizeList.Count == 0) Debug.LogError("CreateScriptableObjects.CreateAsset: missing sizeList!");
         CreateAsset(Metadata.trash.cube, sizeList, isInteractive, overrideExistedAssets);
         CreateAsset(Metadata.trash.cylinder, sizeList, isInteractive, overrideExistedAssets);
@@ -51,11 +52,7 @@ public class ScriptableAssetManager : MonoBehaviour {
     }
 
     public static bool ATrashAssetExists(Metadata.trash shape, float size, bool isInteractive) {
-        string assetPath = Metadata.PATH_TO_ASSET_NONINTERACTIVE;
-        if (isInteractive)
-            assetPath = Metadata.PATH_TO_ASSET_INTERACTIVE;
-
-        Shape asset = (Shape)AssetDatabase.LoadAssetAtPath(assetPath + Metadata.trashString[shape] + size + ".asset", typeof(Shape));
+        Shape asset = (Shape)AssetDatabase.LoadAssetAtPath(getPath(isInteractive) + Metadata.trashString[shape] + size + ".asset", typeof(Shape));
 
         return (asset != null);
     }
