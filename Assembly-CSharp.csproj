@@ -424,7 +424,7 @@
     <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend.shader" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
-    <None Include="Assets\NatureStarterKit2\info.txt" />
+    <None Include="Assets\Import-OtherParty\NatureStarterKit2\info.txt" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_BaseWithDecals.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
     <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
