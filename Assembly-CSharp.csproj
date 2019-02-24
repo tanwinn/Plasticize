@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Import-OtherParty\Flag With Cloth Physics\Script\Movement.cs" />
+    <Compile Include="Assets\Import-OtherParty\MaxP-DirtyLenseFlare\Shaders\Scripts\DirtyLensFlare.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -363,8 +364,8 @@
     <Compile Include="Assets\Mine\Script\ObjectGenerator.cs" />
     <Compile Include="Assets\Mine\Script\ObjectPooler.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\BezierCurve.cs" />
-    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\FlickeringLight.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\JointAutoRotate.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\LightColorAnimation.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\SimplifiedRopePhysics.cs" />
     <Compile Include="Assets\Mine\Script\RandomizeMaterial.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\CubeDisplay.cs" />
@@ -423,6 +424,7 @@
     <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend.shader" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+    <None Include="Assets\NatureStarterKit2\info.txt" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_BaseWithDecals.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
     <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
@@ -442,6 +444,8 @@
     <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\FXAA3.cginc" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+    <None Include="Assets\Import-OtherParty\MentalDreamsAssets-Barrel\BarrelPack\ReadMe!.txt" />
+    <None Include="Assets\Import-OtherParty\MaxP-DirtyLenseFlare\Shaders\_Source\Shaders\Resources\Blur.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
     <None Include="Assets\LeapMotion\Core\Dependencies.txt" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_VertexBillboard.shader" />
@@ -470,6 +474,7 @@
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\Import-OtherParty\MaxP-DirtyLenseFlare\Shaders\_Source\Shaders\Resources\DirtyLensFlare.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_DiffuseVertexColor.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender_SfSrc.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Bloom.shader" />

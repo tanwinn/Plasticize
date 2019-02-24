@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Import-OtherParty\MaxP-DirtyLenseFlare\Shaders\Scripts\Editor\DirtyLensFlareEditor.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CorePreferences.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CustomEditorBase.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CustomPropertyDrawerBase.cs" />
@@ -156,6 +157,20 @@
     <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\EditorResources.cs" />
     <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\FxStyles.cs" />
     <Compile Include="Assets\Mine\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\AntialiasingEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\BloomEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\CreaseShadingEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\DepthOfFieldEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\EdgeDetectionEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\SunShaftsEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\TonemappingEditor.cs" />
+    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushMode.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModeMesh.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Editor\Brush Modes\z_BrushModePaint.cs" />
