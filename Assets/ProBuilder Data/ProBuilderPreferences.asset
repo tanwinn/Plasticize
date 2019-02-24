@@ -18,6 +18,7 @@ MonoBehaviour:
   - pbGenerateUV2PerObject
   - pbEnableBackfaceSelection
   - pb_SmoothingGroupEditor::m_ShowPreview
+  - pbUVMaterialPreview
   m_Int_keys:
   - pbHandleAlignment
   - pbDefaultEditLevel
@@ -38,7 +39,7 @@ MonoBehaviour:
   - pb_VertexColorPalette::lastAssignedColorPalette
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 000001000100
+  m_Bool_values: 00000100010001
   m_Int_values: 000000000000000002000000010000000100000008000000000000000000000000000000
   m_Float_values:
   - 0
