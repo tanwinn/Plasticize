@@ -31,8 +31,8 @@ Material:
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Parallax: 0.014374998
-    - _Shininess: 0.60797864
+    - _Parallax: 0.0262
+    - _Shininess: 0.428
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.35294116, g: 0.35294116, b: 0.35294116, a: 1}
