@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Sphere0.07
   m_EditorClassIdentifier: 
   size: 0.07
-  material: {fileID: 2100000, guid: b3fd6e4d7d27623478dcd01dd0729bae, type: 2}
+  material: {fileID: 2100000, guid: 3b4e876161c8ea347a76c3bad89b92b1, type: 2}
   isInteractive: 1

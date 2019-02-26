@@ -174,6 +174,7 @@ public class ObjectGenerator : MonoBehaviour {
                 #endregion
 
                 objectLists[i].Add(current);
+                Debug.Log(current.GetComponent<Rigidbody>().velocity);
             }
 
         }
@@ -202,7 +203,7 @@ public class ObjectGenerator : MonoBehaviour {
 
     void Start() {
         bool isInteractive;
-        bool overrideAsset = true;
+        bool overrideAsset = false;
         // Caution: Should only use this to generate the asset at the beginning, never at run-time!!  
         // Because the assets will be overrided if there are multiple Generate Object scripts on the scene
         // leads to run-time error
@@ -220,11 +221,11 @@ public class ObjectGenerator : MonoBehaviour {
 
         if (smallZone != null) {
             if (generateCube) GenerateGameObject(Metadata.trash.cube, isInteractive = isSmallZoneActive, true);
-            //List<List<GameObject>> debug = null;
-            if (generateSphere) GenerateGameObject(Metadata.trash.sphere, isInteractive = isSmallZoneActive, true);
+            List<List<GameObject>> debug = null;
+            if (generateSphere) debug = GenerateGameObject(Metadata.trash.sphere, isInteractive = isSmallZoneActive, true);
             if (generateCylinder) GenerateGameObject(Metadata.trash.cylinder, isInteractive = isSmallZoneActive, true);
 
-            //debugObject = DebugGameObject(debug);
+            debugObject = DebugGameObject(debug);
 
         }
     }
@@ -238,10 +239,11 @@ public class ObjectGenerator : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        //Debug.Log(debugObject.transform);
     }
 
     private void Update() {
+        //Debug.Log("Velocity :" + debugObject.GetComponent<Rigidbody>().velocity);
+
         if (generateMore)
             GenerateMoreRandomly(generateCounter);
     }

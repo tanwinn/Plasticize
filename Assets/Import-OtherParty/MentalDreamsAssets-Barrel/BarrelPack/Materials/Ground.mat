@@ -56,7 +56,7 @@ Material:
     - _Metalics: 0.53571427
     - _Parallax: 0.02
     - _Reflection: 0.05357143
-    - _Shininess: 0.086605676
+    - _Shininess: 0.169
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
