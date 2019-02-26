@@ -19,14 +19,14 @@ public class ScriptableAssetManager : MonoBehaviour {
                     string newAssetName = Metadata.trashString[shape] + asset.size;
                     asset.isInteractive = isInteractive;
                     // Randomize Material 
-                    asset.material = RandomizeMaterial.GetRandomMaterial() as Material;
+                    asset.material = RandomizeMaterial.GetTextureMaterial() as Material;
 
                     // Save Asset
                     AssetDatabase.CreateAsset(asset, getPath(isInteractive) + newAssetName + ".asset");
                     AssetDatabase.SaveAssets();
                 }
                 else {
-                    Debug.LogWarning("Asset " + Metadata.trashString[shape] + size + "already exists!");
+                    Debug.LogWarning("Asset " + Metadata.trashString[shape] + size + " already exists!");
                 }
             }
 
@@ -35,9 +35,8 @@ public class ScriptableAssetManager : MonoBehaviour {
 
     public static void CreateAllAssets(List<float> sizeList, bool isInteractive = true, bool overrideExistedAssets = false) {
         if (sizeList.Count == 0) Debug.LogError("CreateScriptableObjects.CreateAsset: missing sizeList!");
-        CreateAsset(Metadata.trash.cube, sizeList, isInteractive, overrideExistedAssets);
-        CreateAsset(Metadata.trash.cylinder, sizeList, isInteractive, overrideExistedAssets);
-        CreateAsset(Metadata.trash.sphere, sizeList, isInteractive, overrideExistedAssets);
+        foreach (Metadata.trash trashEnumValues in System.Enum.GetValues(typeof(Metadata.trash)))
+            CreateAsset(trashEnumValues, sizeList, isInteractive, overrideExistedAssets);
     }
 
     private static string getPath(bool isInteractive) {
