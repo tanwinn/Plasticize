@@ -211,9 +211,9 @@ public class ObjectGenerator : MonoBehaviour {
         }
 
         if (smallZone != null) {
-            if (generateCube) GenerateGameObject(Metadata.trash.cube, isInteractive = isSmallZoneActive, wrappedZone == null);
-            if (generateSphere) GenerateGameObject(Metadata.trash.sphere, isInteractive = isSmallZoneActive, wrappedZone == null);
-            if (generateCylinder) GenerateGameObject(Metadata.trash.cylinder, isInteractive = isSmallZoneActive, wrappedZone == null);
+            if (generateCube) GenerateGameObject(Metadata.trash.cube, isInteractive = isSmallZoneActive, true);
+            if (generateSphere) GenerateGameObject(Metadata.trash.sphere, isInteractive = isSmallZoneActive, true);
+            if (generateCylinder) GenerateGameObject(Metadata.trash.cylinder, isInteractive = isSmallZoneActive, true);
         }
     }
 
