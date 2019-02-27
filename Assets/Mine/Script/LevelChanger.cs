@@ -6,20 +6,19 @@ using UnityEngine.SceneManagement;
 public class LevelChanger : MonoBehaviour {
 
     public Animator animator;
+    public TrashDetector detector;
+    int levelToLoad;
 
-    private int levelToLoad;
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         animator.ResetTrigger("FadeOutTrigger");
-
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
-            FadeToLevel(3);
-	}
+        if (detector.sceneChangeTrigger)
+            FadeToLevel(1);
+    }
 
     public void FadeToLevel(int levelIndex) {
         levelToLoad = levelIndex;

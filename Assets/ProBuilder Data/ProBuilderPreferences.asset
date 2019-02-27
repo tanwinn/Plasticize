@@ -24,6 +24,12 @@ MonoBehaviour:
   - pbForceConvex
   - pbMeshesAreAssets
   - pbMaterialEditorFloating
+  - pbObjExportRightHanded
+  - pbObjApplyTransform
+  - pbObjExportCopyTextures
+  - pbObjExportVertexColors
+  - pbObjTextureOffsetScale
+  - pbObjQuads
   m_Int_keys:
   - pbHandleAlignment
   - pbDefaultEditLevel
@@ -37,6 +43,7 @@ MonoBehaviour:
   - pbDefaultCollider
   - pbShadowCastingMode
   - pbDefaultStaticFlags
+  - pbDefaultExportFormat
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
@@ -48,8 +55,8 @@ MonoBehaviour:
   m_Color_keys: []
   m_Material_keys:
   - pbDefaultMaterial
-  m_Bool_values: 000001000100010101000000
-  m_Int_values: 000000000000000002000000010000000100000008000000000000000000000000000000020000000200000000000000
+  m_Bool_values: 000001000100010101000000010101000101
+  m_Int_values: 00000000000000000200000001000000010000000800000000000000000000000000000002000000020000000000000000000000
   m_Float_values:
   - 0
   - 0

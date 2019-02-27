@@ -6,6 +6,7 @@ TagManager:
   tags:
   - objects
   - Door
+  - trash
   layers:
   - Default
   - TransparentFX

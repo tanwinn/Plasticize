@@ -8,15 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/CAFE-Green.unity
-    guid: a8f06b4413ff3114fa933c8756d9d52e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Beginning.unity
     guid: f05c3906772787147b46ce6155e87ab9
-  - enabled: 1
-    path: Assets/Scenes/CAFE-Limbo.unity
-    guid: 84a2b629e02895241a809efae67d997e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/SampleScene-DesktopOrion.unity
     guid: e8d14607e9958794f8231974bb023cf9

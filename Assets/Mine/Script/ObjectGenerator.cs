@@ -172,9 +172,8 @@ public class ObjectGenerator : MonoBehaviour {
                     forcey.sideForce = sideForce;
                 }
                 #endregion
-
+                current.tag = "trash";
                 objectLists[i].Add(current);
-                Debug.Log(current.GetComponent<Rigidbody>().velocity);
             }
 
         }
@@ -199,7 +198,6 @@ public class ObjectGenerator : MonoBehaviour {
     }
     #endregion
 
-    GameObject debugObject;
 
     void Start() {
         bool isInteractive;
@@ -221,15 +219,14 @@ public class ObjectGenerator : MonoBehaviour {
 
         if (smallZone != null) {
             if (generateCube) GenerateGameObject(Metadata.trash.cube, isInteractive = isSmallZoneActive, true);
-            List<List<GameObject>> debug = null;
-            if (generateSphere) debug = GenerateGameObject(Metadata.trash.sphere, isInteractive = isSmallZoneActive, true);
+            if (generateSphere) GenerateGameObject(Metadata.trash.sphere, isInteractive = isSmallZoneActive, true);
             if (generateCylinder) GenerateGameObject(Metadata.trash.cylinder, isInteractive = isSmallZoneActive, true);
-
-            debugObject = DebugGameObject(debug);
+            
 
         }
     }
 
+    [System.Obsolete]
     private GameObject DebugGameObject(List<List<GameObject>> debug) {
         int debugIndex = debug.Capacity - 1;
         List<GameObject> objectList = debug[debugIndex];
@@ -242,8 +239,6 @@ public class ObjectGenerator : MonoBehaviour {
     }
 
     private void Update() {
-        //Debug.Log("Velocity :" + debugObject.GetComponent<Rigidbody>().velocity);
-
         if (generateMore)
             GenerateMoreRandomly(generateCounter);
     }
