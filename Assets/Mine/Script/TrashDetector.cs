@@ -34,7 +34,7 @@ public class TrashDetector : MonoBehaviour {
     [HideInInspector]
     public bool trashSpawnerTrigger = false;
     [HideInInspector]
-    public int trashInCounter;
+    public int trashInCounter = 0;
     
 
     float animationTimer = 0f;
@@ -44,7 +44,9 @@ public class TrashDetector : MonoBehaviour {
 
 
     private void Start() {
-        trashInCounter = trashMustBeInCounter;
+        if (trashSpawnerEvent) {
+            trashInCounter = trashMustBeInCounter;
+        }
         Debug.Log("Collider of " + gameObject.name + " is disabled");
         gameObject.GetComponent<Collider>().enabled = false;
     }
