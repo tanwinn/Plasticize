@@ -11,6 +11,7 @@ public class ObjectSpawner : MonoBehaviour {
 
     public FloatRange timeBetweenSpawns;
     float currentSpawnDelay;
+    [Tooltip("Delay before initialize the spawner at the beginning")]
     public float beginDelay = 10;
 
     public float tiltAngle = -20;

@@ -155,10 +155,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dbb1ae3d0b7df49abb6542e0a72ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashMustBeInCounter: 1
-  animationDelaySeconds: 7
+  trashMustBeInCounter: 2
   trashDetectorDelaySeconds: 7
+  sceneChangingEvent: 1
+  sceneChangingDelaySeconds: 7
+  trashSpawnerEvent: 0
   sceneChangeTrigger: 0
+  trashSpawnerTrigger: 0
+  trashInCounter: 0
 --- !u!136 &14459048
 CapsuleCollider:
   m_ObjectHideFlags: 0

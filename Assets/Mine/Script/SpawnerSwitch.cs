@@ -8,11 +8,9 @@ using SeniorIS;
 public class SpawnerSwitch : MonoBehaviour {
 
     public TrashDetector detector;
-    //public ObjectSpawner spawner;
-    //public ObjectPooler pooler;
 
     [Tooltip("Duration of a spawning")]
-    public float spawningSeconds = 2f;
+    public float spawningSeconds = .5f;
 
     [Tooltip("Seconds before an explosion after the explosion trigger activates")]
     public float explosionDelaySeconds = 1f;
@@ -20,15 +18,15 @@ public class SpawnerSwitch : MonoBehaviour {
     ObjectSpawner spawner;
     float spawnerTimer = 0f;
 
-    bool DEBUG_MODE = true;
+    bool DEBUG_MODE = false;
     ObjectPooler pooler;
     float explosionDelayTimer = 0f;
     bool explosionTrigger = false;
 
     void Start() {
-        detector.trashSpawnerTrigger = true;
         spawner = GetComponent<ObjectSpawner>() as ObjectSpawner;
         pooler = GetComponent<ObjectPooler>() as ObjectPooler;
+        spawner.enabled = true;
         if (DEBUG_MODE) {
             Debug.Log("Checking spawner and pooler status..");
             Debug.Log("Spawner object: " + spawner.name);
@@ -36,17 +34,20 @@ public class SpawnerSwitch : MonoBehaviour {
         }
     }
 
-    void FixedUpdate() {
+    void Update() {
         // Spawning
-        if (detector.trashSpawnerTrigger) {
+        if (detector.trashSpawnerTrigger || spawner.enabled) {
             if (spawnerTimer < spawningSeconds) {
-                // spawner turns ON
-                Debug.Log("Spawner turns ON");
                 spawner.enabled = true;
+                // spawner turns ON
+                if (DEBUG_MODE) {
+                    Debug.Log("Spawner turns ON");
+                    Debug.Log("Spawner isActiveAndEnabled: " + spawner.isActiveAndEnabled);
+                }
                 spawnerTimer += Time.deltaTime;
             }
             else {
-                Debug.Log("Spawner turns OFF");
+                if (DEBUG_MODE) Debug.Log("Spawner turns OFF");
                 spawner.enabled = false;
                 detector.trashSpawnerTrigger = false;
                 detector.trashInCounter -= detector.trashMustBeInCounter;
@@ -54,17 +55,18 @@ public class SpawnerSwitch : MonoBehaviour {
             }
         }
 
+
         //Explosion
         if (explosionTrigger) {
             if (pooler.enabled) {
                 pooler.enabled = false;
-                Debug.Log("Explosion is triggered. " + explosionDelaySeconds + " seconds before the explosion");
+                if (DEBUG_MODE) Debug.Log("Explosion is triggered. " + explosionDelaySeconds + " seconds before the explosion");
                 explosionDelayTimer += Time.deltaTime;
             }
             else {
                 explosionDelayTimer += Time.deltaTime;
                 if (explosionDelayTimer >= explosionDelaySeconds) {
-                    Debug.Log("BOOM!");
+                    if (DEBUG_MODE) Debug.Log("BOOM!");
                     pooler.enabled = true;
                     explosionDelayTimer = 0f;
                 }
@@ -73,7 +75,7 @@ public class SpawnerSwitch : MonoBehaviour {
     }
 
     public void TriggerExplosion() {
-        Debug.Log("explosion is triggered. " + explosionDelaySeconds + " seconds before the explosion");
+        if (DEBUG_MODE) Debug.Log("Explosion is triggered. " + explosionDelaySeconds + " seconds before the explosion");
         explosionTrigger = true;
     }
 

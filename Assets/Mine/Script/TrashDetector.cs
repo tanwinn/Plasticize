@@ -61,6 +61,7 @@ public class TrashDetector : MonoBehaviour {
             if (trashSpawnerEvent) {
                 Debug.Log("Triggers spawning event");
                 trashSpawnerTrigger = true;
+                Debug.Log("trashInCounter :" + trashInCounter);
             }
         }
 
