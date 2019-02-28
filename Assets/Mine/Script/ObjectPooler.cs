@@ -44,10 +44,11 @@ public class ObjectPooler : MonoBehaviour {
 
     #region Singleton
     // The pool is only assigned and referred when Awake
-    public static ObjectPooler Instance;
+    //public static ObjectPooler Instance;
 
-    private void Awake() {
-        Instance = this;
+    private void Start() {
+        CreatePools();
+        //Instance = this;
     }
     #endregion
 
@@ -139,14 +140,11 @@ public class ObjectPooler : MonoBehaviour {
         objectToSpawn.transform.rotation = rotation;
         objectToSpawn.SetActive(true);
 
-        Debug.Log("objToSpawn size: " + objectToSpawn.transform.localScale);
-
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
 
         if (pooledObj != null)
             pooledObj.OnSpawnedObject();
-        //Debug.Log(objectToSpawn.GetComponent<Rigidbody>().velocity);
-
+        
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;

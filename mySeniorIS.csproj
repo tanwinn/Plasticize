@@ -644,6 +644,7 @@
     <Compile Include="Assets\Mine\Script\Metadata.cs" />
     <Compile Include="Assets\Mine\Script\ObjectGenerator.cs" />
     <Compile Include="Assets\Mine\Script\ObjectPooler.cs" />
+    <Compile Include="Assets\Mine\Script\ObjectSpawner.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\BezierCurve.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\JointAutoRotate.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\LightColorAnimation.cs" />
@@ -655,10 +656,10 @@
     <Compile Include="Assets\Mine\Script\ScriptableObjects\IPooledObject.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\ObjectFloat.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\ObjectForce.cs" />
-    <Compile Include="Assets\Mine\Script\ScriptableObjects\ObjectSpawner.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\ScriptableAssetManager.cs" />
     <Compile Include="Assets\Mine\Script\ScriptableObjects\Shape.cs" />
     <Compile Include="Assets\Mine\Script\ScriptExample.cs" />
+    <Compile Include="Assets\Mine\Script\SpawnerSwitch.cs" />
     <Compile Include="Assets\Mine\Script\TrashDetector.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />

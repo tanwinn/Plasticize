@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2018.1.2f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -362,25 +360,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\AssemblyInfo.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\Changelog.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\Defaults.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\EditorUtility.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\GridRenderer.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\IconUtility.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\MenuItems.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\PlayModeStateListener.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\PreferenceKeys.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\Preferences.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\ProGridsEditor.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\ProGridsEnums.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\ProGridsSceneToolbar.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\ScenePreferencesWindow.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\SemVer.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\Snapping.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\SnapSettings.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\ToggleContent.cs" />
-    <Compile Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Editor\Version.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\AssemblyInfo.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\Changelog.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\Defaults.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\EditorUtility.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\GridRenderer.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\IconUtility.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\MenuItems.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\PlayModeStateListener.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\PreferenceKeys.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\Preferences.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\ProGridsEditor.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\ProGridsEnums.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\ProGridsSceneToolbar.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\ScenePreferencesWindow.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\SemVer.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\Snapping.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\SnapSettings.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\ToggleContent.cs" />
+    <Compile Include="Packages\com.unity.progrids\Editor\Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Import-OtherParty\MaxP-DirtyLenseFlare\Shaders\_Source\Shaders\Resources\Blur.shader" />
@@ -554,40 +552,40 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Styles\Main_Dark.uss" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Styles\Main_Light.uss" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\Alert.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\PackageDetails.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\PackageGroup.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\PackageItem.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\PackageList.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\PackageManagerWindow.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\PackageSearchFilterTabs.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.9.11\Editor\Resources\Templates\PackagesLoading.uxml" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\About\Font\SIL Open Font License.txt" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\About\ThirdPartyLicenses.txt" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\About\changelog.txt" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\DiffuseTextureBlend.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\DiffuseVertexColor.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_EdgePicker.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_FaceHighlight.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_FacePicker.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_HideVertices.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_LineBillboard.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_NormalPreview.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_PointBillboard.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_ReferenceUnlit.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_ScrollHighlight.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_SelectionPicker.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_SmoothingPreview.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_StandardVertexColor.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_TransparentOverlay.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_UnlitSolidColor.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_UnlitVertexColor.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_VertexPicker.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.9\ProBuilder\Shader\pb_VertexShader.shader" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Font\SIL Open Font License.txt" />
-    <None Include="C:\Users\tnguyen19.WOOAD.000\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.progrids@3.0.3-preview.4\Shader\GridShader.shader" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageDetails.uxml" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageGroup.uxml" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageItem.uxml" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageList.uxml" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageManagerWindow.uxml" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageSearchFilterTabs.uxml" />
+    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackagesLoading.uxml" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\About\Font\SIL Open Font License.txt" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\About\ThirdPartyLicenses.txt" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\About\changelog.txt" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\DiffuseTextureBlend.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\DiffuseVertexColor.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_EdgePicker.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_FaceHighlight.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_FacePicker.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_HideVertices.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_LineBillboard.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_NormalPreview.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_PointBillboard.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_ReferenceUnlit.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_ScrollHighlight.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_SelectionPicker.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_SmoothingPreview.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_StandardVertexColor.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_TransparentOverlay.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_UnlitSolidColor.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_UnlitVertexColor.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_VertexPicker.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_VertexShader.shader" />
+    <None Include="Packages\com.unity.progrids\Font\SIL Open Font License.txt" />
+    <None Include="Packages\com.unity.progrids\Shader\GridShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

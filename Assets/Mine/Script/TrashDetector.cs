@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class TrashDetector : MonoBehaviour {
 
-    [Tooltip("Numbers of trash the user needs to put in the trash can before the scene changes")]
-    public int trashMustBeInCounter = 2;
+    [Header("Trash detector")]
 
-    [Tooltip("Delay time before the scene changes")]
-    public float animationDelaySeconds = 7f;
+    [Tooltip("Numbers of trash the user needs to put in the trash can before the trigger events changes")]
+    public int trashMustBeInCounter = 2;
 
     [Tooltip("Delay time before start detecting trash in the trash can")]
     public float trashDetectorDelaySeconds = 7f;
 
+    [Header("Event triggers")]
+    [Tooltip("Does this detector trigger scene changing?")]
+    public bool sceneChangingEvent = false;
+
+    [Tooltip("Delay time before the scene changes")][ConditionalHide("sceneChangingEvent")]
+    public float sceneChangingDelaySeconds = 7f;
+
+    [Tooltip("Does this detector trigger trash spawner?")]
+    public bool trashSpawnerEvent = false;
+
+    //[Tooltip("Delay time before object spawner active")]
+    //[ConditionalHide("trashSpawnerEvent")]
+    //public float trashSpawnerDelaySeconds = .1f;
+
     [HideInInspector]
     public bool sceneChangeTrigger = false;
+    [HideInInspector]
+    public bool trashSpawnerTrigger = false;
+    [HideInInspector]
+    public int trashInCounter = 0;
 
-    int trashInCounter = 0;
     float animationTimer = 0f;
+    float trashSpawnerTimer = 0f;
     float trashDetectorTimer = 0f;
     List<Collider> Trashes = new List<Collider>();
 
@@ -27,7 +44,7 @@ public class TrashDetector : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         trashDetectorTimer += Time.deltaTime;
 
         if (trashDetectorTimer >= trashDetectorDelaySeconds && !gameObject.GetComponent<Collider>().enabled) {
@@ -36,13 +53,22 @@ public class TrashDetector : MonoBehaviour {
         }
         
         if (trashInCounter >= trashMustBeInCounter) {
-            Debug.Log("Triggers scene changing. Delay seconds left: " + (animationDelaySeconds - animationTimer));
-            animationTimer += Time.deltaTime;
+            if (sceneChangingEvent) {
+                Debug.Log("Triggers scene changing. Delay seconds left: " + (sceneChangingDelaySeconds - animationTimer));
+                animationTimer += Time.deltaTime;
+            }
+
+            if (trashSpawnerEvent) {
+                Debug.Log("Triggers spawning event");
+                trashSpawnerTrigger = true;
+            }
         }
 
         // Start Count Down the changing scene action
-        if (animationTimer >= animationDelaySeconds && !sceneChangeTrigger) {
+        if (animationTimer >= sceneChangingDelaySeconds && !sceneChangeTrigger) {
             sceneChangeTrigger = true;
+            animationTimer = 0f;
+            trashInCounter = 0;
         }
     }
 
