@@ -22,6 +22,9 @@ public class TrashDetector : MonoBehaviour {
     [Tooltip("Does this detector trigger trash spawner?")]
     public bool trashSpawnerEvent = false;
 
+    [Tooltip("Doestroy object after colliding?")]
+    public bool destroyAfterColliding = false;
+    
     //[Tooltip("Delay time before object spawner active")]
     //[ConditionalHide("trashSpawnerEvent")]
     //public float trashSpawnerDelaySeconds = .1f;
@@ -31,27 +34,30 @@ public class TrashDetector : MonoBehaviour {
     [HideInInspector]
     public bool trashSpawnerTrigger = false;
     [HideInInspector]
-    public int trashInCounter = 0;
+    public int trashInCounter;
+    
 
     float animationTimer = 0f;
     float trashSpawnerTimer = 0f;
     float trashDetectorTimer = 0f;
     List<Collider> Trashes = new List<Collider>();
 
+
     private void Start() {
+        trashInCounter = trashMustBeInCounter;
         Debug.Log("Collider of " + gameObject.name + " is disabled");
         gameObject.GetComponent<Collider>().enabled = false;
     }
 
     // Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
         trashDetectorTimer += Time.deltaTime;
 
         if (trashDetectorTimer >= trashDetectorDelaySeconds && !gameObject.GetComponent<Collider>().enabled) {
             gameObject.GetComponent<Collider>().enabled = true;
             Debug.Log("Collider of " + gameObject.name + " is enabled");
         }
-        
+
         if (trashInCounter >= trashMustBeInCounter) {
             if (sceneChangingEvent) {
                 Debug.Log("Triggers scene changing. Delay seconds left: " + (sceneChangingDelaySeconds - animationTimer));
@@ -80,6 +86,13 @@ public class TrashDetector : MonoBehaviour {
                 Trashes.Add(other);
                 Debug.Log("Trash is put in the can: " + other.name);
                 trashInCounter++;
+
+                // destroy collider after colliding
+                if (destroyAfterColliding) {
+                    Destroy(other.gameObject);
+                    Debug.Log("Destroy game object after colliding");
+                }
+
             }
 
     }
