@@ -73,7 +73,10 @@ public class ObjectPooler : MonoBehaviour {
             Metadata.trash trashType = KeyByValue(Metadata.trashString, pool.tag);
             // create queue for each pool
             Queue<GameObject> objectPool = new Queue<GameObject>();
-            ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
+
+            // EDITOR ONLY
+            //ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
+
             Shape sObj = ScriptableAssetManager.LoadAsset(trashType, pool.objectSize, pool.isInteractive);
 
             for (int i = 0; i < pool.poolSize; i++) {
@@ -120,10 +123,11 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
+    [System.Obsolete]
     private void OnDisable() {
         poolDictionary.Clear();
     }
-
+    [System.Obsolete]
     private void OnEnable() {
         CreatePools();
     }
@@ -138,6 +142,7 @@ public class ObjectPooler : MonoBehaviour {
 
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
+        objectToSpawn.GetComponent<Renderer>().material = Random.Range(-1, 1) > 0 ? RandomizeMaterial.GetTextureMaterial(): RandomizeMaterial.GetMatteMaterial();
         objectToSpawn.SetActive(true);
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();

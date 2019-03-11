@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene-DesktopOrion.unity
     guid: e8d14607e9958794f8231974bb023cf9
+  - enabled: 1
+    path: Assets/Scenes/Scene03.unity
+    guid: 9cdfd12fc9fafc3438ca8b935bc442a7
   m_configObjects: {}

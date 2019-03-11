@@ -22,7 +22,7 @@ public class ObjectGenerator : MonoBehaviour {
     public bool generateCylinder = true;
 
     [Header("Object Settings")]
-    public List<float> sizeList = Metadata.sizeList;
+    public List<float> sizeList;
     public float RandomHeightMax = Metadata.HEIGHT_MAX;
     public int interactiveCount = Metadata.INTERACTIVE_COUNT;
     public int nonInteractiveCount = Metadata.NONINTERACTIVE_COUNT;
@@ -142,6 +142,7 @@ public class ObjectGenerator : MonoBehaviour {
 
                 // Transform
                 current.transform.position = newPosition;
+                if (isInteractive) current.transform.position = (newPosition / RandomHeightMax)*2;
                 current.transform.rotation = Random.rotationUniform;
 
                 if (DEBUG_MODE)
@@ -206,10 +207,10 @@ public class ObjectGenerator : MonoBehaviour {
         // Because the assets will be overrided if there are multiple Generate Object scripts on the scene
         // leads to run-time error
         //
-        if (isWrappedZoneActive || isSmallZoneActive)
-            ScriptableAssetManager.CreateAllAssets(sizeList, isInteractive = true, overrideAsset);
-        if (!isWrappedZoneActive || !isSmallZoneActive)
-            ScriptableAssetManager.CreateAllAssets(sizeList, isInteractive = false, overrideAsset);
+        //if (isWrappedZoneActive || isSmallZoneActive)
+        //    ScriptableAssetManager.CreateAllAssets(sizeList, isInteractive = true, overrideAsset);
+        //if (!isWrappedZoneActive || !isSmallZoneActive)
+        //    ScriptableAssetManager.CreateAllAssets(sizeList, isInteractive = false, overrideAsset);
 
         if (wrappedZone != null) {
             if (generateCube) GenerateGameObject(Metadata.trash.cube, isInteractive = isWrappedZoneActive, false);

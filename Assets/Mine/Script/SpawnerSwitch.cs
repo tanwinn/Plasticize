@@ -11,6 +11,7 @@ public class SpawnerSwitch : MonoBehaviour {
 
     [Tooltip("Duration of a spawning")]
     public float spawningSeconds = .5f;
+    private float _spawningSeconds;
 
     [Tooltip("Seconds before an explosion after the explosion trigger activates")]
     public float explosionDelaySeconds = 1f;
@@ -27,6 +28,7 @@ public class SpawnerSwitch : MonoBehaviour {
         spawner = GetComponent<ObjectSpawner>() as ObjectSpawner;
         pooler = GetComponent<ObjectPooler>() as ObjectPooler;
         spawner.enabled = true;
+        _spawningSeconds = spawningSeconds;
         if (DEBUG_MODE) {
             Debug.Log("Checking spawner and pooler status..");
             Debug.Log("Spawner object: " + spawner.name);
@@ -37,7 +39,7 @@ public class SpawnerSwitch : MonoBehaviour {
     void Update() {
         // Spawning
         if (detector.trashSpawnerTrigger || spawner.enabled) {
-            if (spawnerTimer < spawningSeconds) {
+            if (spawnerTimer < _spawningSeconds) {
                 spawner.enabled = true;
                 // spawner turns ON
                 if (DEBUG_MODE) {
@@ -51,6 +53,11 @@ public class SpawnerSwitch : MonoBehaviour {
                 spawner.enabled = false;
                 detector.trashSpawnerTrigger = false;
                 detector.trashInCounter -= detector.trashMustBeInCounter;
+                if (DEBUG_MODE) Debug.Log("SpawnerSwicth: trashInCounter = " + detector.trashInCounter);
+                if (detector.trashInCounter <= 0)
+                    _spawningSeconds = spawningSeconds;
+                else
+                    _spawningSeconds *= .5f;
                 spawnerTimer = 0f;
             }
         }

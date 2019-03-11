@@ -42,6 +42,8 @@ public class TrashDetector : MonoBehaviour {
     float trashDetectorTimer = 0f;
     List<Collider> Trashes = new List<Collider>();
 
+    bool DEBUG_MODE = false;
+
 
     private void Start() {
         if (trashSpawnerEvent) {
@@ -69,7 +71,7 @@ public class TrashDetector : MonoBehaviour {
             if (trashSpawnerEvent) {
                 Debug.Log("Triggers spawning event");
                 trashSpawnerTrigger = true;
-                Debug.Log("trashInCounter :" + trashInCounter);
+                if (DEBUG_MODE) Debug.Log("trashInCounter :" + trashInCounter);
             }
         }
 
@@ -86,13 +88,13 @@ public class TrashDetector : MonoBehaviour {
         if (Trashes.Find(x => x.GetInstanceID() == other.GetInstanceID()) == null)
             if (other.tag == "trash") {
                 Trashes.Add(other);
-                Debug.Log("Trash is put in the can: " + other.name);
+                if (DEBUG_MODE) Debug.Log("Trash is put in the can: " + other.name);
                 trashInCounter++;
 
                 // destroy collider after colliding
                 if (destroyAfterColliding) {
                     Destroy(other.gameObject);
-                    Debug.Log("Destroy game object after colliding");
+                    if (DEBUG_MODE) Debug.Log("Destroy game object after colliding");
                 }
 
             }
