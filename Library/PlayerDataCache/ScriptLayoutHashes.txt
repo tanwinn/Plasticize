@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/tnguyen19/git/New folder (2)/New folder (2).exe
+C:/Users/tnguyen19/git/Mar112019/Mar112019.exe
 SceneListBegin?
 Assets/Scenes/Beginning.unity
 Assets/Scenes/Scene03.unity
@@ -143,6 +143,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 30afa8783a8bbee2e465ec9ce1efaee2 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 30afa8783a8bbee2e465ec9ce1efaee2 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 607d64d2c4bc76ac9876e6f7b9cc7edf UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DestroyNonInteractive
 1c9dbf6588c2a86d918d6a6e3eb4ef45 Assembly-CSharp.dll:Leap.Unity.Examples.TransformHandle
 38f2aefc9dcf0f8107e7bd37238b3096 Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.Blur
 f5ce04d51633a5a2e05a731aa45ef200 Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.MotionBlur
@@ -269,7 +270,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 a2c646d8bbb9ab664fe88746e70ce12e Assembly-CSharp.dll:.SpawnerSwitch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Leap.Unity.Examples.SimpleScaleUtil
 21984f001d5a114ee9fbf62810ee8eb7 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Water.SpecularLighting
-08fdbbb24dfc99197d68783e8ff5d040 Assembly-CSharp.dll:.DisappearAfterSeconds
+08fdbbb24dfc99197d68783e8ff5d040 Assembly-CSharp.dll:.ColliderRemoveAfterSeconds
 2dbfd4f7836c7f6a79e17be5f4bf7969 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.WaypointCircuit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Leap.Unity.Interaction.DefaultXRNodeTrackingProvider
 bc9cbc103adb91964057e12f7d94780c Assembly-CSharp.dll:Leap.Unity.Interaction.InteractionButton
@@ -370,4 +371,4 @@ d8b86f4fb9fa4c153334062c4f5a4a1d Assembly-CSharp.dll:Leap.Unity.StationaryTestLe
 cc03d32d84fe7de61c1ff011ce358a0c Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.Tonemapping
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Metadata
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DestroyNonInteractive
+11a04a9d698e9c38a0da5080d7941602 Assembly-CSharp.dll:.TriggerExplosionEverySeconds

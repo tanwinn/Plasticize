@@ -81,9 +81,10 @@ public class ObjectPooler : MonoBehaviour {
 
             for (int i = 0; i < pool.poolSize; i++) {
                 GameObject obj = GameObject.CreatePrimitive(Metadata.trashType[trashType]);
+
                 obj.name = "From" + pool.tag + pool.objectSize + "Pool";
                 #region Instantiate game object to put into the pool
-                
+
                 DisplayScript displayScript;
                 if (trashType == Metadata.trash.cylinder)
                     displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
@@ -122,16 +123,14 @@ public class ObjectPooler : MonoBehaviour {
             poolDictionary.Add(pool.tag, objectPool);
         }
     }
-
-    [System.Obsolete]
+    
     private void OnDisable() {
         poolDictionary.Clear();
     }
-    [System.Obsolete]
+
     private void OnEnable() {
         CreatePools();
     }
-    
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
         if (!poolDictionary.ContainsKey(tag)) {

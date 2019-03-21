@@ -14,7 +14,7 @@ public class SpawnerSwitch : MonoBehaviour {
     private float _spawningSeconds;
 
     [Tooltip("Seconds before an explosion after the explosion trigger activates")]
-    public float explosionDelaySeconds = 1f;
+    public float explosionDelaySeconds = .3f;
 
     ObjectSpawner spawner;
     float spawnerTimer = 0f;

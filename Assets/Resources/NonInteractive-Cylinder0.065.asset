@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: NonInteractive-Cylinder0.065
   m_EditorClassIdentifier: 
   size: 0.065
-  material: {fileID: 2100000, guid: 2d4898beb1cef8c48bffab4dd6cafb60, type: 2}
+  material: {fileID: 2100000, guid: 5ba0b893158ce2046a9dccda65dc5333, type: 2}
   isInteractive: 0

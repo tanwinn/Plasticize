@@ -1,8 +1,8 @@
-﻿<Properties StartupItem="mySeniorIS.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ObjectFloat.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Mine\Script\Physic&amp;Animation\JointAutoRotate.cs">
     <Files>
-      <File FileName="Assets\ObjectFloat.cs" Line="9" Column="25" />
+      <File FileName="Assets\Mine\Script\Physic&amp;Animation\JointAutoRotate.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
