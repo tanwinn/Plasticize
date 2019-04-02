@@ -353,8 +353,6 @@
     <Compile Include="Assets\Mine\Script\Attractor.cs" />
     <Compile Include="Assets\Mine\Script\ColliderRemoveAfterSeconds.cs" />
     <Compile Include="Assets\Mine\Script\CrossPlatformInput\Gesture.cs" />
-    <Compile Include="Assets\Mine\Script\CrossPlatformInput\LeapInput.cs" />
-    <Compile Include="Assets\Mine\Script\CrossPlatformInput\LeapInput-old.cs" />
     <Compile Include="Assets\Mine\Script\FloatRange.cs" />
     <Compile Include="Assets\Mine\Script\FPSController.cs" />
     <Compile Include="Assets\Mine\Script\Grenade.cs" />
@@ -369,6 +367,7 @@
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\BezierCurve.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\JointAutoRotate.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\LightColorAnimation.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\RotateCommandRecognition.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\SimplifiedRopePhysics.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\TriggerExplosionEverySeconds.cs" />
     <Compile Include="Assets\Mine\Script\RandomizeMaterial.cs" />
@@ -412,6 +411,7 @@
     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_MeshUtility.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Util.cs" />
     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Vector.cs" />
+    <Compile Include="Assets\TestAxisButton.cs" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlend_SfSrc.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendMobile.shader" />

@@ -205,8 +205,8 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             // CrossPlatformInputManager.SetAxis("Horizontal", -1);
             //float horizontal = m_LeapInputManager.GetAxis("Horizontal");
             //float vertical = m_LeapInputManager.GetAxis("Vertical");
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+            float horizontal = CrossPlatformInputManager.GetAxisReference("Horizontal");
+            float vertical = CrossPlatformInputManager.GetAxisReference("Vertical");
             Debug.Log(horizontal + " : " + vertical);
             bool waswalking = m_IsWalking;
 

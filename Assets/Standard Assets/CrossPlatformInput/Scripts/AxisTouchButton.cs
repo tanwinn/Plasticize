@@ -15,7 +15,7 @@ namespace UnityStandardAssets.CrossPlatformInput
         public float axisValue; // The axis that the value has
         public float responseSpeed; // The speed at which the axis touch button responds
         public float returnToCentreSpeed; // The speed at which the button will return to its centre
-                                              //constructor
+
         AxisTouchButton m_PairedWith; // Which button this one is paired with
         CrossPlatformInputManager.VirtualAxis m_Axis; // A reference to the virtual axis as it is in the cross platform input
 
@@ -44,6 +44,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 				m_Axis = CrossPlatformInputManager.VirtualAxisReference(axisName);
 			}
 			FindPairedButton();
+            Debug.Log(gameObject + " is paired with button: " + m_PairedWith);
+            Debug.Log("Axis: " + m_Axis + " has the name " + m_Axis.name);
 		}
 
 		void FindPairedButton()
@@ -77,11 +79,13 @@ namespace UnityStandardAssets.CrossPlatformInput
             }
             // update the axis and record that the button has been pressed this frame
             m_Axis.Update(Mathf.MoveTowards(m_Axis.GetValue, axisValue, responseSpeed * Time.deltaTime));
+            if (m_Axis.GetValueRaw != 0) Debug.Log("OnPointerDown: " + CrossPlatformInputManager.VirtualAxisReference(m_Axis.name).GetValueRaw + " == " +  m_Axis.GetValueRaw);
         }
 
 
         public void OnPointerUp(PointerEventData data) {
             m_Axis.Update(Mathf.MoveTowards(m_Axis.GetValue, 0, responseSpeed * Time.deltaTime));
+            if (m_Axis.GetValueRaw!=0) Debug.Log("OnPointerUp: " + CrossPlatformInputManager.VirtualAxisReference(m_Axis.name).GetValueRaw + " == " + m_Axis.GetValueRaw);
         }
     }
 }
