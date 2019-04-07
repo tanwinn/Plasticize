@@ -59,10 +59,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DestroyNonInteractive.cs" />
-    <Compile Include="Assets\DestroyObjectWhenCollide.cs" />
     <Compile Include="Assets\Import-OtherParty\Flag With Cloth Physics\Script\Movement.cs" />
     <Compile Include="Assets\Import-OtherParty\MaxP-DirtyLenseFlare\Shaders\Scripts\DirtyLensFlare.cs" />
+    <Compile Include="Assets\Import-OtherParty\ObjectOutlineShader\5.Final Shader\OnHoverBorder.cs" />
+    <Compile Include="Assets\Import-OtherParty\OutlineEffect\Demo\MaterialSwitcher.cs" />
+    <Compile Include="Assets\Import-OtherParty\OutlineEffect\Demo\OutlineAnimation.cs" />
+    <Compile Include="Assets\Import-OtherParty\OutlineEffect\Demo\Rotate.cs" />
+    <Compile Include="Assets\Import-OtherParty\OutlineEffect\Demo\Toggle.cs" />
+    <Compile Include="Assets\Import-OtherParty\OutlineEffect\LinkedSet.cs" />
+    <Compile Include="Assets\Import-OtherParty\OutlineEffect\Outline.cs" />
+    <Compile Include="Assets\Import-OtherParty\OutlineEffect\OutlineEffect.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -365,8 +371,11 @@
     <Compile Include="Assets\Mine\Script\ObjectPooler.cs" />
     <Compile Include="Assets\Mine\Script\ObjectSpawner.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\BezierCurve.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\DestroyNonInteractive.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\DestroyObjectWhenCollide.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\JointAutoRotate.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\LightColorAnimation.cs" />
+    <Compile Include="Assets\Mine\Script\Physic&amp;Animation\PlaySoundOnTrigger.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\RotateCommandRecognition.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\SimplifiedRopePhysics.cs" />
     <Compile Include="Assets\Mine\Script\Physic&amp;Animation\TriggerExplosionEverySeconds.cs" />
@@ -426,7 +435,9 @@
     <None Include="Assets\LeapMotion\Core\README_BEFORE_UPDATING.txt" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\LutGen.shader" />
+    <None Include="Assets\Import-OtherParty\ObjectOutlineShader\3.Blur\Blur.shader" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+    <None Include="Assets\Import-OtherParty\OutlineEffect\Resources\OutlineShader.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend.shader" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
     <None Include="Assets\Import-OtherParty\NatureStarterKit2\info.txt" />
@@ -435,6 +446,7 @@
     <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\ACES.cginc" />
+    <None Include="Assets\Import-OtherParty\OutlineEffect\Resources\OutlineBufferShader.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendMobile_SfSrc.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\LeapMotion\Core\readme.txt" />
@@ -457,12 +469,15 @@
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendBmp.shader" />
+    <None Include="Assets\Mine\MyPostProcessing\OutlineDiffused.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\LeapMotion\Core\Shaders\ThresholdOverlay.shader" />
+    <None Include="Assets\Import-OtherParty\ObjectOutlineShader\5.Final Shader\OutlineBlur.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend_WithMetaData.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Common.cginc" />
     <None Include="Assets\Mine\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
     <None Include="Assets\LeapMotion\Core\Shaders\PassthroughForeground.shader" />
+    <None Include="Assets\Import-OtherParty\ObjectOutlineShader\5.Final Shader\OutlineDistort.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlendAndSnow.shader" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\UI\Trackball.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_StandardVertexColor.shader" />
@@ -470,7 +485,9 @@
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Bloom.cginc" />
     <None Include="Assets\ProCore\Polybrush\Shader\Noise.cginc" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\TAA.shader" />
+    <None Include="Assets\Import-OtherParty\ObjectOutlineShader\2.Outline\Outline.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
+    <None Include="Assets\Import-OtherParty\ObjectOutlineShader\1.ApplyTexture\ApplyTexture.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\TAA.cginc" />
     <None Include="Assets\ProCore\Polybrush\Font\SIL Open Font License.txt" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
@@ -485,6 +502,7 @@
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\Bloom.shader" />
     <None Include="Assets\LeapMotion\Core\Version.txt" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendBmp_SfSrc.shader" />
+    <None Include="Assets\Import-OtherParty\ObjectOutlineShader\5.Final Shader\FinalOutline.shader" />
     <None Include="Assets\LeapMotion\Core\Shaders\VertexOffsetShader.shader" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
@@ -494,6 +512,7 @@
     <None Include="Assets\Mine\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_Overlay.shader" />
     <None Include="Assets\Mine\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+    <None Include="Assets\Import-OtherParty\ObjectOutlineShader\4.Distort\Distort.shader" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendModulate_SfSrc.shader" />
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>C:/Users/tnguyen19/git/mySeniorIS/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
