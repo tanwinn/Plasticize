@@ -90,7 +90,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 
 		// returns the platform appropriate axis for the given name
-		public static float GetAxis(string name)
+		public static float GetAxisReference(string name)
 		{
 			return GetAxis(name, false);
 		}
@@ -101,9 +101,13 @@ namespace UnityStandardAssets.CrossPlatformInput
 			return GetAxis(name, true);
 		}
 
+        public static float GetAxis(string name) {
+            return GetAxis(name, false);
+        }
 
-		// private function handles both types of axis (raw and not raw)
-		private static float GetAxis(string name, bool raw)
+
+        // private function handles both types of axis (raw and not raw)
+        private static float GetAxis(string name, bool raw)
 		{
 			return activeInput.GetAxis(name, raw);
 		}
@@ -244,36 +248,21 @@ namespace UnityStandardAssets.CrossPlatformInput
 		{
 			public string name { get; private set; }
 			public bool matchWithInputManager { get; private set; }
-			public string axisName {get; set; }
-			public float axisValue { set; get; }
-            public float responseSpeed { set; get; }
-            public float returnToCentreSpeed { set; get; }
 
-            private int m_LastPressedFrame = -5;
+			private int m_LastPressedFrame = -5;
 			private int m_ReleasedFrame = -5;
 			private bool m_Pressed;
 
 
-			public VirtualButton(string name, string axisName, float axisValue)
-				: this(name, axisName, axisValue, true)
+			public VirtualButton(string name)
+				: this(name, true)
 			{
 			}
 
-            public VirtualButton(string name)
-                : this(name, true) 
-            {
-            }
 
-            public VirtualButton(string name, bool matchToInputSettings) {
-                this.name = name;
-                this.matchWithInputManager = matchWithInputManager;
-            }
-
-			public VirtualButton(string name, string axisName, float axisValue, bool matchToInputSettings)
+			public VirtualButton(string name, bool matchToInputSettings)
 			{
 				this.name = name;
-                this.axisName = axisName;
-                this.axisValue = axisValue;
 				matchWithInputManager = matchToInputSettings;
 			}
 

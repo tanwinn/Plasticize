@@ -1,7 +1,11 @@
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.CrossPlatformInput.PlatformSpecific;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using ExecuteEvents = UnityEngine.EventSystems.ExecuteEvents;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.FirstPerson {
     [RequireComponent(typeof(CharacterController))]
@@ -57,6 +61,14 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public GameObject backwardCommand;
+        public GameObject forwardCommand;
+        public GameObject leftCommand;
+        public GameObject rightCommand;
+
+        public Button horizontalPositive, horizontalNegative, verticalPositive, verticalNegative;
+        PointerEventData pointer;
+
         // Use this for initialization
         private void Start() {
             m_CharacterController = GetComponent<CharacterController>();
@@ -70,6 +82,8 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
             m_MouseLook.Init(transform, m_Camera.transform);
+
+            pointer = new PointerEventData(EventSystem.current);
         }
 
 
@@ -197,13 +211,100 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             m_Camera.transform.localPosition = newCameraPosition;
         }
 
+        PointerEventData SimulateButtonDown(Button button) {
+            // Event simulation
+            PointerEventData pointer = new PointerEventData(EventSystem.current);
+            Debug.Log(ExecuteEvents.Execute(button.gameObject, pointer, ExecuteEvents.pointerEnterHandler));
+            Debug.Log(ExecuteEvents.Execute(button.gameObject, pointer, ExecuteEvents.pointerDownHandler));
+            return pointer;
+        }
+
+        PointerEventData SimulateButtonUp(Button button) {
+            PointerEventData pointer = new PointerEventData(EventSystem.current);
+            Debug.Log(ExecuteEvents.Execute(button.gameObject, pointer, ExecuteEvents.pointerUpHandler));
+            
+            return pointer;
+        }
+
+        void gestureToButton(string axisName) {
+            //float axisValue = 0f;
+            if (axisName == "VerticalTouch") {
+                if (forwardCommand.name == "activate" && forwardCommand != null) {
+                    // up arrow
+                    Debug.Log("Press Up arrow");
+                    verticalPositive.OnPointerDown(SimulateButtonDown(verticalPositive));
+                }
+                if (forwardCommand.name == "deactivate" && forwardCommand != null) {
+                    Debug.Log("Release Up arrow");
+                    verticalPositive.OnPointerUp(SimulateButtonUp(verticalPositive));
+                }
+                if (backwardCommand.name == "activate" && backwardCommand != null) {
+                    Debug.Log("Press Down arrow");
+                    verticalNegative.OnPointerDown(SimulateButtonDown(verticalNegative));
+                }
+                if (backwardCommand.name == "deactivate" && backwardCommand != null) {
+                    Debug.Log("Release Down arrow");
+                    verticalNegative.OnPointerUp(SimulateButtonUp(verticalNegative));
+                }
+                //return verticalPositive.GetAxisValue();
+            }
+            else if (axisName == "HorizontalTouch") {
+                //    axisValue = 0;
+                //return 0f;
+            }
+            //return 0f;
+            //Debug.Log(CrossPlatformInputManager.AxisExists(axisName));
+
+            //return (axisValue > 1) ? 1f : (axisValue < -1) ? -1f : axisValue;
+
+        }
+        [System.Obsolete]
+        private float getAxis(string axisName) {
+            if (axisName == "HorizontalTouch") {
+                //gestureToButton("HorizontalTouch");
+                return CrossPlatformInputManager.VirtualAxisReference("HorizontalTouch").GetValueRaw;
+            }
+            else if (axisName == "VerticalTouch") {
+                //gestureToButton("VerticalTouch");
+                return CrossPlatformInputManager.VirtualAxisReference("VerticalTouch").GetValueRaw;
+            }
+            else
+                return 0f;
+        }
+
+        float GetAxisRaw(string axisName) {
+            //float axisValue = 0f;
+            if (axisName == "Vertical") {
+                //Mathf.MoveTowards(currentAxis.GetValue, button.axisValue, button.responseSpeed * Time.deltaTime)
+                if (forwardCommand.name == "activate" && forwardCommand != null)
+                    // up arrow
+                    return 1f;
+                else if (backwardCommand.name == "activate" && backwardCommand)
+                    return -1f;
+                else return 0f;
+            }
+            else if (axisName == "Horizontal") {
+                return 0f;
+            }
+
+            return 0f;
+
+        }
 
         private void GetInput(out float speed) {
             // Read input
+            // gesture to button simulation
+            //float horizontal = CrossPlatformInputManager.GetAxis("HorizontalTouch");
+            //float vertical = CrossPlatformInputManager.GetAxis("VerticalTouch");
+            float horizontal = GetAxisRaw("Horizontal");
+            float vertical = GetAxisRaw("Vertical");
+            //Debug.Log("axisValue system vertical: " + vertical1);
 
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-            Debug.Log(horizontal + " : " + vertical);
+            //float horizontal = GetAxis("HorizontalTouch");
+            ////Debug.Log("axisValue horizontal: " + axisValue);
+            //float vertical = GetAxis("VerticalTouch");    
+            //Debug.Log("axisValue vertical: " + vertical);
+            if (horizontal+vertical!=0) Debug.Log(horizontal + " : " + vertical);
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT

@@ -44,10 +44,11 @@ public class ObjectPooler : MonoBehaviour {
 
     #region Singleton
     // The pool is only assigned and referred when Awake
-    public static ObjectPooler Instance;
+    //public static ObjectPooler Instance;
 
-    private void Awake() {
-        Instance = this;
+    private void Start() {
+        CreatePools();
+        //Instance = this;
     }
     #endregion
 
@@ -72,14 +73,18 @@ public class ObjectPooler : MonoBehaviour {
             Metadata.trash trashType = KeyByValue(Metadata.trashString, pool.tag);
             // create queue for each pool
             Queue<GameObject> objectPool = new Queue<GameObject>();
-            ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
+
+            // EDITOR ONLY
+            //ScriptableAssetManager.CreateAsset(trashType, new List<float>() { pool.objectSize }, pool.isInteractive, false);
+
             Shape sObj = ScriptableAssetManager.LoadAsset(trashType, pool.objectSize, pool.isInteractive);
 
             for (int i = 0; i < pool.poolSize; i++) {
                 GameObject obj = GameObject.CreatePrimitive(Metadata.trashType[trashType]);
+
                 obj.name = "From" + pool.tag + pool.objectSize + "Pool";
                 #region Instantiate game object to put into the pool
-                
+
                 DisplayScript displayScript;
                 if (trashType == Metadata.trash.cylinder)
                     displayScript = obj.AddComponent<CylinderDisplay>() as CylinderDisplay;
@@ -118,12 +123,12 @@ public class ObjectPooler : MonoBehaviour {
             poolDictionary.Add(pool.tag, objectPool);
         }
     }
-
-    private void OnEnable() {
-        CreatePools();
+    
+    private void OnDisable() {
+        poolDictionary.Clear();
     }
 
-    private void Start() {
+    private void OnEnable() {
         CreatePools();
     }
 
@@ -136,15 +141,14 @@ public class ObjectPooler : MonoBehaviour {
 
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
+        objectToSpawn.GetComponent<Renderer>().material = Random.Range(-1, 1) > 0 ? RandomizeMaterial.GetTextureMaterial(): RandomizeMaterial.GetMatteMaterial();
         objectToSpawn.SetActive(true);
-
-
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
 
         if (pooledObj != null)
             pooledObj.OnSpawnedObject();
-        //Debug.Log(objectToSpawn.GetComponent<Rigidbody>().velocity);
+        
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;

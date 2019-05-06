@@ -59,14 +59,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\ChangeLog.cs" />
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\ConditionalHidePropertyDrawer.cs" />
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\DoorDetectionLiteEditor.cs" />
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\DoorRotationLiteEditor.cs" />
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\EditorStylesHelper.cs" />
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\ErrorWindow.cs" />
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\SupportWindow.cs" />
-    <Compile Include="Assets\Import-OtherParty\Ameye\Alex's Door System Lite\Editor\TagHelper.cs" />
+    <Compile Include="Assets\Editor\ConditionalHidePropertyDrawer.cs" />
+    <Compile Include="Assets\Import-OtherParty\MaxP-DirtyLenseFlare\Shaders\Scripts\Editor\DirtyLensFlareEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\AntialiasingEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\BloomEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\CreaseShadingEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\DepthOfFieldEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\EdgeDetectionEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\SunShaftsEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\TonemappingEditor.cs" />
+    <Compile Include="Assets\Import-OtherParty\NatureStarterKit2\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CorePreferences.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CustomEditorBase.cs" />
     <Compile Include="Assets\LeapMotion\Core\Editor\CustomPropertyDrawerBase.cs" />

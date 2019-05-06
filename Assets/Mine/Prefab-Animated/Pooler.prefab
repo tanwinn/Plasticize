@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876858483630932}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.1887245, y: 1.0835623, z: -6.53557}
+  m_LocalPosition: {x: 4.1887245, y: 1.0835623, z: -6.464}
   m_LocalScale: {x: 1.0937525, y: 1.0937496, z: 1.0937527}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,24 +57,47 @@ MonoBehaviour:
     poolSize: 20
     objectSize: 0.12
     isInteractive: 0
-    addForceToObject: 1
+    addForceToObject: 0
     upForce: 0.6
-    sideForce: 1
+    sideForce: 1.5
     randomFloater:
       min: 0.5
-      max: 1.5
-    velocity: 5
+      max: 3
+    velocity: 0.01
     angularVelocity:
       min: 0
-      max: 4
+      max: 0.01
+    randomVelocity:
+      min: 0.001
+      max: 0.004
+    boyanceSimulate: 1
+    waterLevel: 0.8
+    floatThreshold: 2
+    waterDensity: 0.2
+    downForce: 1
+    displayScript: {fileID: 0}
+  - tag: Cube
+    poolSize: 50
+    objectSize: 0.12
+    isInteractive: 0
+    addForceToObject: 1
+    upForce: 0.5
+    sideForce: 0.01
+    randomFloater:
+      min: 0.005
+      max: 0.01
+    velocity: 0.5
+    angularVelocity:
+      min: 0
+      max: 0.01
     randomVelocity:
       min: 0
-      max: 3
-    boyanceSimulate: 1
+      max: 0.001
+    boyanceSimulate: 0
     waterLevel: 0.85
     floatThreshold: 2
     waterDensity: 0.8
-    downForce: 0.05
+    downForce: 0.3
     displayScript: {fileID: 0}
 --- !u!114 &114923733907618242
 MonoBehaviour:
@@ -90,6 +113,6 @@ MonoBehaviour:
   Tags:
   - Sphere
   timeBetweenSpawns:
-    min: 0
-    max: 0
+    min: 0.01
+    max: 0.3
   tiltAngle: -20

@@ -34,6 +34,7 @@ namespace Leap.Unity.Interaction {
   /// component may be referred to as interaction objects.
   /// </summary>
   [RequireComponent(typeof(Rigidbody))]
+  [RequireComponent(typeof(OnHover))]
   public class InteractionBehaviour : MonoBehaviour, IInteractionBehaviour {
 
     public const float MAX_ANGULAR_VELOCITY = 100F;

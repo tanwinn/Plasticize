@@ -8,11 +8,10 @@ public class CylinderDisplay : DisplayScript {
     // Use this for initialization
     void Start () {
         gameObject.GetComponent<Renderer>().material = scriptObject.material;
-        GameObject obj = GetComponent<GameObject>();
         name = scriptObject.name;
         transform.localScale = new Vector3(scriptObject.size, scriptObject.size*2, scriptObject.size);
         if (scriptObject.isInteractive)
-            obj.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();   
+            gameObject.AddComponent<Leap.Unity.Interaction.InteractionBehaviour>();   
     }
 
     #region Deprecated
