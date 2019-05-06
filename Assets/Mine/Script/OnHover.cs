@@ -36,10 +36,6 @@ public class OnHover : MonoBehaviour {
             Debug.Log("isHovered");
             Outlined(hoveredColorIndex);
         }
-        //else if (behaviorManager.isGrasped) {
-        //    Debug.Log("isGrasped");
-        //    Outlined(graspedColorIndex);
-        //}
         else {
             NonOutlined();
         }

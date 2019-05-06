@@ -25,6 +25,9 @@ public class FPSController : MonoBehaviour {
     public float Gravity = 1f;
     public float Sensitivity = 1f;
 
+    public Camera cam;
+    public string keyToResetCamera = "c";
+
     float horizontalAxis;
     float verticalAxis;
 
@@ -112,9 +115,20 @@ public class FPSController : MonoBehaviour {
 
     void FixedUpdate() { 
         Move(verticalAxis);
+        if (Input.GetKeyDown(keyToResetCamera)) {
+            ResetCamera();
+        }
         //Debug.Log(rb.velocity);
         //KeyboardMovement();
 
+    }
+
+    void ResetCamera() {
+        Debug.Log("reset camera rotation & location");
+        if (cam == null)
+            cam = FindObjectOfType<Camera>();
+        cam.gameObject.transform.localPosition = Vector3.zero;
+        cam.gameObject.transform.localRotation = Quaternion.identity;
     }
 
 }

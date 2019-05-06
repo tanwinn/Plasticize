@@ -16,17 +16,13 @@ public class PlaySoundOnTrigger : MonoBehaviour {
         if (other.gameObject.GetComponent<Collider>() == triggerObjectCollider) {
             //Debug.Log(gameObject + " colliders with " + other.gameObject.tag);
             if (!soundObject.activeSelf) soundObject.SetActive(true);
-            else {
-                source.UnPause();
-                if (!source.isPlaying) source.Play();
-            }
         }   
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.GetComponent<Collider>() == triggerObjectCollider) {
             Debug.Log(gameObject + " colliders with " + other.gameObject.tag);
-            source.Pause();
+            if (soundObject.activeSelf) soundObject.SetActive(false);
         }
     }
 }

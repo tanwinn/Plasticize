@@ -88,7 +88,7 @@ public class TrashDetector : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (trashDetectorTimer < trashDetectorDelaySeconds) {
             if (other.tag == "trash") {
-                Destroy(other.gameObject);
+                Destroy(other.gameObject, 4);
                 Debug.Log("Destroy");
             }
         }
